@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *imgView;
 
 @end

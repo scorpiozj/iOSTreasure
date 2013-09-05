@@ -10,4 +10,5 @@
 
 @interface ZJFullScreenImageViewController : UIViewController
 
+- (id)initWithOriginalImageView:(UIImageView *)imgView withFullImageURLString:(NSString *)urlString;
 @end
