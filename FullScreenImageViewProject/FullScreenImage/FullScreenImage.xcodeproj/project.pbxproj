@@ -19,6 +19,7 @@
 		520524A217D81FFA006862B8 /* ZJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524A117D81FFA006862B8 /* ZJViewController.m */; };
 		520524A517D81FFA006862B8 /* ZJViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520524A317D81FFA006862B8 /* ZJViewController_iPhone.xib */; };
 		520524A817D81FFA006862B8 /* ZJViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520524A617D81FFA006862B8 /* ZJViewController_iPad.xib */; };
+		520524B017D8210C006862B8 /* ZJFullScreenImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		520524A117D81FFA006862B8 /* ZJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJViewController.m; sourceTree = "<group>"; };
 		520524A417D81FFA006862B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZJViewController_iPhone.xib; sourceTree = "<group>"; };
 		520524A717D81FFA006862B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZJViewController_iPad.xib; sourceTree = "<group>"; };
+		520524AE17D8210C006862B8 /* ZJFullScreenImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFullScreenImageViewController.h; sourceTree = "<group>"; };
+		520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFullScreenImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 		5205248E17D81FFA006862B8 /* FullScreenImage */ = {
 			isa = PBXGroup;
 			children = (
+				520524AE17D8210C006862B8 /* ZJFullScreenImageViewController.h */,
+				520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */,
 				5205249717D81FFA006862B8 /* ZJAppDelegate.h */,
 				5205249817D81FFA006862B8 /* ZJAppDelegate.m */,
 				520524A017D81FFA006862B8 /* ZJViewController.h */,
@@ -181,6 +186,7 @@
 				5205249517D81FFA006862B8 /* main.m in Sources */,
 				5205249917D81FFA006862B8 /* ZJAppDelegate.m in Sources */,
 				520524A217D81FFA006862B8 /* ZJViewController.m in Sources */,
+				520524B017D8210C006862B8 /* ZJFullScreenImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +284,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FullScreenImage/FullScreenImage-Prefix.pch";
 				INFOPLIST_FILE = "FullScreenImage/FullScreenImage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,6 +296,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FullScreenImage/FullScreenImage-Prefix.pch";
 				INFOPLIST_FILE = "FullScreenImage/FullScreenImage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -313,6 +321,7 @@
 				520524AD17D81FFA006862B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
