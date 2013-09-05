@@ -10,5 +10,6 @@
 
 @interface ZJViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *imgView;
+@property (strong, nonatomic) IBOutlet UIImageView *imgView2;
 
 @end

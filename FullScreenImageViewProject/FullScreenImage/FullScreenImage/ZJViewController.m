@@ -10,7 +10,7 @@
 #import "ZJFullScreenImageViewController.h"
 
 #define kImgURLString               @"http://ww3.sinaimg.cn/large/61fd0433jw1e895bchri7j20c80bcdgv.jpg"
-
+#define kImgURLSring2               @"http://ww2.sinaimg.cn/large/9c88d78fjw1e7wpfb6n0ej20c63tbqqe.jpg"
 @interface ZJViewController ()
 
 @end
@@ -25,6 +25,9 @@
 
     [self.imgView addGestureRecognizer:tapGesture];
     
+    UITapGestureRecognizer *tap2Guesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImageAction2:)];
+    [self.imgView2 addGestureRecognizer:tap2Guesture];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +38,7 @@
 
 - (void)viewDidUnload {
     [self setImgView:nil];
+    [self setImgView2:nil];
     [super viewDidUnload];
 }
 
@@ -42,7 +46,13 @@
 - (void)clickImageAction:(id)sender
 {
     ZJFullScreenImageViewController *fullScreenVC = [[ZJFullScreenImageViewController alloc] initWithOriginalImageView:self.imgView withFullImageURLString:kImgURLString];
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self presentViewController:fullScreenVC animated:YES completion:nil];
+    
+    
+}
+- (void)clickImageAction2:(id)sender
+{
+    ZJFullScreenImageViewController *fullScreenVC = [[ZJFullScreenImageViewController alloc] initWithOriginalImageView:self.imgView2 withFullImageURLString:kImgURLSring2];
     [self presentViewController:fullScreenVC animated:YES completion:nil];
     
     

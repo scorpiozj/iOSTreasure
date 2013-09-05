@@ -89,12 +89,13 @@
 {
     //DO NOT animate here as there will be a break
     [super viewDidAppear:animated];
+    self.originalImgView.hidden = YES;
     
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    
+    [self dismissAnimation];
 }
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -146,15 +147,21 @@
 
 - (void)dismissAnimation
 {
+    __weak ZJFullScreenImageViewController *weakSelf = self;
     [UIView animateWithDuration:.8 animations:^{
         UIWindow *mainWindow = [[UIApplication sharedApplication] keyWindow];
-        CGRect rectOnWindow = [self.originalImgView convertRect:self.originalImgView.frame toView:mainWindow];
+        [mainWindow addSubview:self.fullScreenImgView];
+        UIViewController *present = weakSelf.presentingViewController;
+        CGRect rectOnWindow = self.originalImgView.frame;//[self.originalImgView convertRect:self.originalImgView.frame toView:present.view];
         rectOnWindow.origin.y += 20;
         self.fullScreenImgView.frame = rectOnWindow;
     } completion:^(BOOL finished) {
 //        [self dismissViewControllerAnimated:YES completion:^{
 //            
 //        }];
+        self.fullScreenImgView.alpha = 0;
+        [self.fullScreenImgView removeFromSuperview];
+        self.originalImgView.hidden = NO;
     }];
 }
 @end
