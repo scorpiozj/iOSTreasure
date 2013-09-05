@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40B6D3B517D8BFC2000EB0DC /* small2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40B6D3B417D8BFC2000EB0DC /* small2.jpg */; };
 		5205248917D81FFA006862B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205248817D81FFA006862B8 /* UIKit.framework */; };
 		5205248B17D81FFA006862B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205248A17D81FFA006862B8 /* Foundation.framework */; };
 		5205248D17D81FFA006862B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205248C17D81FFA006862B8 /* CoreGraphics.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40B6D3B417D8BFC2000EB0DC /* small2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = small2.jpg; sourceTree = "<group>"; };
 		5205248517D81FFA006862B8 /* FullScreenImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullScreenImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5205248817D81FFA006862B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5205248A17D81FFA006862B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +172,7 @@
 		5205248F17D81FFA006862B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40B6D3B417D8BFC2000EB0DC /* small2.jpg */,
 				520524E017D8292D006862B8 /* small.jpg */,
 				520524E217D82939006862B8 /* large.jpg */,
 				5205249017D81FFA006862B8 /* FullScreenImage-Info.plist */,
@@ -283,6 +286,7 @@
 				520524E117D8292D006862B8 /* small.jpg in Resources */,
 				520524E317D82939006862B8 /* large.jpg in Resources */,
 				52154F7A17D84651001F70BC /* README.md in Resources */,
+				40B6D3B517D8BFC2000EB0DC /* small2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
