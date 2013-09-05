@@ -34,6 +34,8 @@
 		520524DD17D8274C006862B8 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524CD17D8274C006862B8 /* UIImage+MultiFormat.m */; };
 		520524DE17D8274C006862B8 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524CF17D8274C006862B8 /* UIImage+WebP.m */; };
 		520524DF17D8274C006862B8 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524D117D8274C006862B8 /* UIImageView+WebCache.m */; };
+		520524E117D8292D006862B8 /* small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 520524E017D8292D006862B8 /* small.jpg */; };
+		520524E317D82939006862B8 /* large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 520524E217D82939006862B8 /* large.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		520524CF17D8274C006862B8 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		520524D017D8274C006862B8 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		520524D117D8274C006862B8 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		520524E017D8292D006862B8 /* small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = small.jpg; sourceTree = "<group>"; };
+		520524E217D82939006862B8 /* large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = large.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		5205248F17D81FFA006862B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				520524E017D8292D006862B8 /* small.jpg */,
+				520524E217D82939006862B8 /* large.jpg */,
 				5205249017D81FFA006862B8 /* FullScreenImage-Info.plist */,
 				5205249117D81FFA006862B8 /* InfoPlist.strings */,
 				5205249417D81FFA006862B8 /* main.m */,
@@ -259,6 +265,8 @@
 				5205249F17D81FFA006862B8 /* Default-568h@2x.png in Resources */,
 				520524A517D81FFA006862B8 /* ZJViewController_iPhone.xib in Resources */,
 				520524A817D81FFA006862B8 /* ZJViewController_iPad.xib in Resources */,
+				520524E117D8292D006862B8 /* small.jpg in Resources */,
+				520524E317D82939006862B8 /* large.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
