@@ -38,6 +38,7 @@
 		520524E317D82939006862B8 /* large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 520524E217D82939006862B8 /* large.jpg */; };
 		520524E917D82B30006862B8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524E817D82B30006862B8 /* ImageIO.framework */; };
 		520524EF17D82B6E006862B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524EE17D82B6E006862B8 /* MapKit.framework */; };
+		52154F7A17D84651001F70BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52154F7917D84651001F70BC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		520524E817D82B30006862B8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		520524EA17D82B46006862B8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		520524EE17D82B6E006862B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		52154F7917D84651001F70BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +121,7 @@
 		5205247C17D81FFA006862B8 = {
 			isa = PBXGroup;
 			children = (
-				520524EE17D82B6E006862B8 /* MapKit.framework */,
-				520524EA17D82B46006862B8 /* CoreImage.framework */,
-				520524E817D82B30006862B8 /* ImageIO.framework */,
-				520524E617D82B28006862B8 /* QuartzCore.framework */,
+				52154F7917D84651001F70BC /* README.md */,
 				5205248E17D81FFA006862B8 /* FullScreenImage */,
 				5205248717D81FFA006862B8 /* Frameworks */,
 				5205248617D81FFA006862B8 /* Products */,
@@ -140,6 +139,10 @@
 		5205248717D81FFA006862B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				520524EE17D82B6E006862B8 /* MapKit.framework */,
+				520524EA17D82B46006862B8 /* CoreImage.framework */,
+				520524E817D82B30006862B8 /* ImageIO.framework */,
+				520524E617D82B28006862B8 /* QuartzCore.framework */,
 				5205248817D81FFA006862B8 /* UIKit.framework */,
 				5205248A17D81FFA006862B8 /* Foundation.framework */,
 				5205248C17D81FFA006862B8 /* CoreGraphics.framework */,
@@ -279,6 +282,7 @@
 				520524A817D81FFA006862B8 /* ZJViewController_iPad.xib in Resources */,
 				520524E117D8292D006862B8 /* small.jpg in Resources */,
 				520524E317D82939006862B8 /* large.jpg in Resources */,
+				52154F7A17D84651001F70BC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
