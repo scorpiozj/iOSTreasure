@@ -39,6 +39,7 @@
 		520524E917D82B30006862B8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524E817D82B30006862B8 /* ImageIO.framework */; };
 		520524EF17D82B6E006862B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524EE17D82B6E006862B8 /* MapKit.framework */; };
 		52154F7A17D84651001F70BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52154F7917D84651001F70BC /* README.md */; };
+		522E437617D9B9D400E8A96B /* ZJFullScreen.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 522E437517D9B9D400E8A96B /* ZJFullScreen.bundle */; };
 		529BB18D17D96A7E009A4A2A /* ZJFullScreenImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		520524EA17D82B46006862B8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		520524EE17D82B6E006862B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52154F7917D84651001F70BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		522E437517D9B9D400E8A96B /* ZJFullScreen.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZJFullScreen.bundle; sourceTree = "<group>"; };
 		529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFullScreenImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 		5205248E17D81FFA006862B8 /* FullScreenImage */ = {
 			isa = PBXGroup;
 			children = (
+				522E437517D9B9D400E8A96B /* ZJFullScreen.bundle */,
 				520524B117D8274C006862B8 /* SDWebImage */,
 				520524AE17D8210C006862B8 /* ZJFullScreenImageViewController.h */,
 				529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */,
@@ -287,6 +290,7 @@
 				520524E317D82939006862B8 /* large.jpg in Resources */,
 				52154F7A17D84651001F70BC /* README.md in Resources */,
 				40B6D3B517D8BFC2000EB0DC /* small2.jpg in Resources */,
+				522E437617D9B9D400E8A96B /* ZJFullScreen.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
