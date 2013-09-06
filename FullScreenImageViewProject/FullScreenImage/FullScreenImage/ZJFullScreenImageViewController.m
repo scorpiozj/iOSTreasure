@@ -12,7 +12,8 @@
 #define kZJScreenWidth                  (320.0)
 #define kZJScreenHeight                 (480.0)
 
-
+#define ZJBunldImageName(_X_)           [NSString stringWithFormat:@"ZJFullScreen.bundle/%@",(_X_)]
+#define kSaveBtnTag                     (101)
 
 @interface ZJFullScreenImageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView   *originalImgView;
@@ -89,6 +90,8 @@
     [super viewDidAppear:animated];
     self.originalImgView.hidden = YES;
     
+    [self addSaveButton];
+    
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -121,6 +124,8 @@
 
 - (void)launchAnimation
 {
+    __weak ZJFullScreenImageViewController *weakSelf = self;
+
     [UIView animateWithDuration:.8 animations:^{
         CGSize imgSize = self.originalImgView.image.size;
         CGFloat width = kZJScreenWidth;
@@ -147,16 +152,20 @@
         
         
     } completion:^(BOOL finished) {
-        [self.fullScreenImgView setImageWithURL:[NSURL URLWithString:self.urlString] placeholderImage:self.originalImgView.image];
+        [self.fullScreenImgView setImageWithURL:[NSURL URLWithString:self.urlString] placeholderImage:self.originalImgView.image completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            if (!error)
+            {
+                UIButton *saveBtn = (UIButton *)[weakSelf.view viewWithTag:kSaveBtnTag];
+                saveBtn.userInteractionEnabled = YES;
+            }
+        }];
         
     }];
 }
 
 - (void)dismissAnimation
 {
-    __weak ZJFullScreenImageViewController *weakSelf = self;
-    
-    
+
     [UIView animateWithDuration:.8 animations:^{
         UIWindow *mainWindow = [[UIApplication sharedApplication] keyWindow];
 
@@ -172,5 +181,45 @@
         [self.fullScreenImgView removeFromSuperview];
         self.originalImgView.hidden = NO;
     }];
+}
+
+- (void)addSaveButton
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGSize btnSize = {24,24};
+    CGRect btnRect = CGRectZero;
+    btnRect.origin.x = 20;
+    btnRect.origin.y = screenRect.size.height - btnSize.height - 20;
+    btnRect.size = btnSize;
+
+    
+    UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveBtn.frame = btnRect;
+    [saveBtn setImage:[UIImage imageNamed:ZJBunldImageName(@"img_save_icon")] forState:UIControlStateNormal];
+    [saveBtn setImage:[UIImage imageNamed:ZJBunldImageName(@"img_save_icon_highlighted")] forState:UIControlStateHighlighted];
+    [saveBtn addTarget:self action:@selector(saveAction:) forControlEvents:UIControlEventTouchUpInside];
+    saveBtn.tag = kSaveBtnTag;
+    saveBtn.userInteractionEnabled = NO;
+    saveBtn.showsTouchWhenHighlighted = YES;
+    [self.view addSubview:saveBtn];
+}
+
+- (void)saveAction:(id)sender
+{
+    UIImageWriteToSavedPhotosAlbum(self.fullScreenImgView.image, self , @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSString *title = @"Success";
+    NSString *msg = @"save to Album";
+    if (error)
+    {
+        title = @"Fail";
+        msg = @"fail to save";
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 @end
