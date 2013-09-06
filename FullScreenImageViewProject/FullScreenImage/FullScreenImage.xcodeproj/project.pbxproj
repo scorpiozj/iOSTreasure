@@ -20,7 +20,6 @@
 		520524A217D81FFA006862B8 /* ZJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524A117D81FFA006862B8 /* ZJViewController.m */; };
 		520524A517D81FFA006862B8 /* ZJViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520524A317D81FFA006862B8 /* ZJViewController_iPhone.xib */; };
 		520524A817D81FFA006862B8 /* ZJViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520524A617D81FFA006862B8 /* ZJViewController_iPad.xib */; };
-		520524B017D8210C006862B8 /* ZJFullScreenImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */; };
 		520524D217D8274C006862B8 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524B317D8274C006862B8 /* MKAnnotationView+WebCache.m */; };
 		520524D317D8274C006862B8 /* NSData+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524B517D8274C006862B8 /* NSData+GIF.m */; };
 		520524D417D8274C006862B8 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 520524B717D8274C006862B8 /* SDImageCache.m */; };
@@ -40,6 +39,7 @@
 		520524E917D82B30006862B8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524E817D82B30006862B8 /* ImageIO.framework */; };
 		520524EF17D82B6E006862B8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520524EE17D82B6E006862B8 /* MapKit.framework */; };
 		52154F7A17D84651001F70BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52154F7917D84651001F70BC /* README.md */; };
+		529BB18D17D96A7E009A4A2A /* ZJFullScreenImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,6 @@
 		520524A417D81FFA006862B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZJViewController_iPhone.xib; sourceTree = "<group>"; };
 		520524A717D81FFA006862B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZJViewController_iPad.xib; sourceTree = "<group>"; };
 		520524AE17D8210C006862B8 /* ZJFullScreenImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFullScreenImageViewController.h; sourceTree = "<group>"; };
-		520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFullScreenImageViewController.m; sourceTree = "<group>"; };
 		520524B217D8274C006862B8 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		520524B317D8274C006862B8 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		520524B417D8274C006862B8 /* NSData+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GIF.h"; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		520524EA17D82B46006862B8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		520524EE17D82B6E006862B8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52154F7917D84651001F70BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFullScreenImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 			children = (
 				520524B117D8274C006862B8 /* SDWebImage */,
 				520524AE17D8210C006862B8 /* ZJFullScreenImageViewController.h */,
-				520524AF17D8210C006862B8 /* ZJFullScreenImageViewController.m */,
+				529BB18C17D96A7E009A4A2A /* ZJFullScreenImageViewController.m */,
 				5205249717D81FFA006862B8 /* ZJAppDelegate.h */,
 				5205249817D81FFA006862B8 /* ZJAppDelegate.m */,
 				520524A017D81FFA006862B8 /* ZJViewController.h */,
@@ -300,7 +300,6 @@
 				5205249517D81FFA006862B8 /* main.m in Sources */,
 				5205249917D81FFA006862B8 /* ZJAppDelegate.m in Sources */,
 				520524A217D81FFA006862B8 /* ZJViewController.m in Sources */,
-				520524B017D8210C006862B8 /* ZJFullScreenImageViewController.m in Sources */,
 				520524D217D8274C006862B8 /* MKAnnotationView+WebCache.m in Sources */,
 				520524D317D8274C006862B8 /* NSData+GIF.m in Sources */,
 				520524D417D8274C006862B8 /* SDImageCache.m in Sources */,
@@ -315,6 +314,7 @@
 				520524DD17D8274C006862B8 /* UIImage+MultiFormat.m in Sources */,
 				520524DE17D8274C006862B8 /* UIImage+WebP.m in Sources */,
 				520524DF17D8274C006862B8 /* UIImageView+WebCache.m in Sources */,
+				529BB18D17D96A7E009A4A2A /* ZJFullScreenImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
