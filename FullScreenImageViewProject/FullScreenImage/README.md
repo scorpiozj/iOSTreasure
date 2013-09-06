@@ -8,10 +8,12 @@ Step
 1. Add ZJFullScreenImageViewController.h/m to your project
 2. Add SDWebImage (you can use cocoapods)
 3. In your code, create the ViewController like:
+<pre><code>
     ZJFullScreenImageViewController *fullScreenVC = [[ZJFullScreenImageViewController alloc] initWithOriginalImageView:self.imgView withFullImageURLString:kImgURLString];
     [self presentViewController:fullScreenVC animated:YES completion:nil];
-self.imgView: the image which will have the animation
-kImgURLString: a NSString represents for the url of the full screen image
+</code></pre>
+
+self.imgView: the image which will have the animation<br/>kImgURLString: a NSString represents for the url of the full screen image
 
 OK, That's ALL!
 
