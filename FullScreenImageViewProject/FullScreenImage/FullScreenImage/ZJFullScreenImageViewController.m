@@ -9,6 +9,11 @@
 #import "ZJFullScreenImageViewController.h"
 #import "UIImageView+WebCache.h"
 
+#define kZJScreenWidth                  (320.0)
+#define kZJScreenHeight                 (480.0)
+
+
+
 @interface ZJFullScreenImageViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView   *originalImgView;
 @property (nonatomic, strong) UIImageView   *fullScreenImgView;
@@ -41,11 +46,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-
-//    self.view.backgroundColor = [UIColor redColor];
-    
+        
 	// Do any additional setup after loading the view.
     CGRect rect = [[UIScreen mainScreen] bounds];
     self.view.frame = rect;
@@ -59,17 +60,14 @@
     self.imgScrollView.contentSize = originalSize;
     
     _fullScreenImgView = [[UIImageView alloc] initWithImage:self.originalImgView.image];
-//    CGRect fullRect = CGRectZero;
-//    fullRect.origin.x = (rect.size.width - originalSize.width)/2;
-//    fullRect.origin.y = (rect.size.height - originalSize.height)/2;
-//    fullRect.size = originalSize;
+
     
     UIWindow *mainWindow = [[UIApplication sharedApplication] keyWindow];
     CGRect rectOnWindow = [self.originalImgView convertRect:self.originalImgView.bounds toView:mainWindow];
-//    rectOnWindow.origin.y += 20;
     self.fullScreenImgView.frame = rectOnWindow;
     
     self.imgScrollView.contentMode = UIViewContentModeScaleAspectFit;
+
     [self.imgScrollView addSubview:self.fullScreenImgView];
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissSelf)];
@@ -95,6 +93,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
+    
+    
     [self dismissAnimation];
 }
 - (void)viewDidDisappear:(BOOL)animated
@@ -113,11 +113,9 @@
 - (void)dismissSelf
 {
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+        
     [self dismissViewControllerAnimated:YES completion:^{
-        
-        
-        
-        
+
     }];
 }
 
@@ -125,7 +123,7 @@
 {
     [UIView animateWithDuration:.8 animations:^{
         CGSize imgSize = self.originalImgView.image.size;
-        CGFloat width = 320.0;
+        CGFloat width = kZJScreenWidth;
         CGFloat height = floorf(width/imgSize.width*imgSize.height);
         
         CGSize largeSize = CGSizeMake(width, height);
@@ -133,10 +131,19 @@
         CGRect viewRect = self.view.bounds;
         CGRect largeRect = CGRectZero;
         largeRect.origin.x = (viewRect.size.width - largeSize.width)/2;
-        largeRect.origin.y = (viewRect.size.height - largeSize.height)/2;
+        if (height > kZJScreenHeight)
+        {
+            largeRect.origin.y = 0;
+        }
+        else
+        {
+            largeRect.origin.y = (viewRect.size.height - largeSize.height)/2;
+        }
+        
         largeRect.size = largeSize;
         
         self.fullScreenImgView.frame = largeRect;
+        self.imgScrollView.contentSize = largeRect.size;
         
         
     } completion:^(BOOL finished) {
@@ -148,17 +155,19 @@
 - (void)dismissAnimation
 {
     __weak ZJFullScreenImageViewController *weakSelf = self;
+    
+    
     [UIView animateWithDuration:.8 animations:^{
         UIWindow *mainWindow = [[UIApplication sharedApplication] keyWindow];
+
         [mainWindow addSubview:self.fullScreenImgView];
-        UIViewController *present = weakSelf.presentingViewController;
-        CGRect rectOnWindow = self.originalImgView.frame;//[self.originalImgView convertRect:self.originalImgView.frame toView:present.view];
-        rectOnWindow.origin.y += 20;
+        
+        CGRect rectOnWindow = [self.originalImgView.superview convertRect:self.originalImgView.frame toView:mainWindow];
+//        not need
+//        rectOnWindow.origin.y += 20;
         self.fullScreenImgView.frame = rectOnWindow;
-    } completion:^(BOOL finished) {
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            
-//        }];
+    } completion:^(BOOL finished)
+     {
         self.fullScreenImgView.alpha = 0;
         [self.fullScreenImgView removeFromSuperview];
         self.originalImgView.hidden = NO;
