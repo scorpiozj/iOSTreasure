@@ -7,12 +7,13 @@
 //
 
 #import "ZJViewController.h"
-
+#import "ZJView.h"
 @interface ZJViewController ()<UIDynamicAnimatorDelegate>
 
 @property (nonatomic, strong) UIDynamicAnimator *animator ;
-@property (nonatomic, strong) UIView *redView;
-@property (nonatomic, strong) UIView *blueView;
+@property (nonatomic, strong) ZJView *redView;
+@property (nonatomic, strong) ZJView *blueView;
+@property (nonatomic, strong) UIAttachmentBehavior *attachment;
 
 @end
 
@@ -44,16 +45,39 @@
 #pragma mark -Privare
 - (void)_addSubViews
 {
-    _redView = [[UIView alloc] initWithFrame:CGRectMake(10, 5, 80, 80)];
+    _redView = [[ZJView alloc] initWithFrame:CGRectMake(10, 5, 80, 80)];
     _redView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.redView];
     
-    _blueView = [[UIView alloc] initWithFrame:CGRectMake(220, 5, 80, 80)];
+    _blueView = [[ZJView alloc] initWithFrame:CGRectMake(220, 5, 80, 80)];
     _blueView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:self.blueView];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    switch (self.dynamic) {
+        case DynamicGravity:
+        {
+            
+        }
+            break;
+        case DynamicCollision:
+        {
+            
+        }
+            break;
+        case DynamicAttachment:
+        {
+            self.redView.center = CGPointMake(160, 150);
+            self.blueView.center = CGPointMake(200, 320);
+            UIPanGestureRecognizer *attachPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(attachPanAction:)];
+            [self.view addGestureRecognizer:attachPan];
+        }
+            break;
+        default:
+            break;
+    }
+
 }
 
 - (void)_tapAction
@@ -69,7 +93,11 @@
             [self addCollision];
         }
             break;
-            
+        case DynamicAttachment:
+        {
+            [self addAttachment];
+        }
+            break;
         default:
             break;
     }
@@ -135,6 +163,47 @@
         }];
     }
     num ++;
+}
+
+- (void)addAttachment
+{
+    [self.animator removeAllBehaviors];
+    
+
+//    int random = arc4random();
+//    CGPoint anchorPoint = CGPointMake(random % 320, random%480);
+    
+    _attachment = [[UIAttachmentBehavior alloc] initWithItem:self.redView offsetFromCenter:UIOffsetMake(0, 0) attachedToAnchor:CGPointMake(80, 60)];
+    
+    [self.attachment setDamping:.3];
+//    [attachment setFrequency:100];
+//    [attachment setLength:80];
+    [self.animator addBehavior:self.attachment];
+    
+    
+    UIAttachmentBehavior *secAttachment = [[UIAttachmentBehavior alloc] initWithItem:self.blueView attachedToItem:self.redView];
+    [secAttachment setDamping:.3];
+//    [secAttachment setFrequency:100];
+//    [secAttachment setLength:100];
+    [self.animator addBehavior:secAttachment];
+    
+//    __weak UIAttachmentBehavior *weakAttach = self.attachment;
+//    [UIView animateWithDuration:3 animations:^{
+//        weakAttach.anchorPoint = CGPointMake(200, 100);
+//    } completion:^(BOOL finished) {
+//        self.redView.center = CGPointMake(160, 150);
+//        self.blueView.center = CGPointMake(200, 320);
+//
+//    }];
+
+    
+}
+
+- (void)attachPanAction:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translation = [recognizer locationInView:self.view];
+    self.attachment.anchorPoint = translation;
+//    self.redView.center = translation;
 }
 #pragma mark -UIDynamicAnimatorDelegate
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator

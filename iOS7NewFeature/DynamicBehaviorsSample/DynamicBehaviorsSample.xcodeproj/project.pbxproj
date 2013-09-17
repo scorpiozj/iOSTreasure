@@ -23,6 +23,7 @@
 		529C2B5617E7F475004EF614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 529C2B5417E7F475004EF614 /* InfoPlist.strings */; };
 		529C2B5817E7F475004EF614 /* DynamicBehaviorsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B5717E7F475004EF614 /* DynamicBehaviorsSampleTests.m */; };
 		529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */; };
+		529C2B6617E832D1004EF614 /* ZJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6517E832D0004EF614 /* ZJView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		529C2B5717E7F475004EF614 /* DynamicBehaviorsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicBehaviorsSampleTests.m; sourceTree = "<group>"; };
 		529C2B6117E7F6BE004EF614 /* ZJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewController.h; sourceTree = "<group>"; };
 		529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTableViewController.m; sourceTree = "<group>"; };
+		529C2B6417E832D0004EF614 /* ZJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJView.h; sourceTree = "<group>"; };
+		529C2B6517E832D0004EF614 /* ZJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				529C2B4117E7F475004EF614 /* ZJViewController.h */,
 				529C2B4217E7F475004EF614 /* ZJViewController.m */,
 				529C2B4417E7F475004EF614 /* Images.xcassets */,
+				529C2B6417E832D0004EF614 /* ZJView.h */,
+				529C2B6517E832D0004EF614 /* ZJView.m */,
 				529C2B3017E7F475004EF614 /* Supporting Files */,
 			);
 			path = DynamicBehaviorsSample;
@@ -263,6 +268,7 @@
 				529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */,
 				529C2B3A17E7F475004EF614 /* ZJAppDelegate.m in Sources */,
 				529C2B3617E7F475004EF614 /* main.m in Sources */,
+				529C2B6617E832D1004EF614 /* ZJView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
