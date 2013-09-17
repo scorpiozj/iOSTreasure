@@ -22,6 +22,7 @@
 		529C2B4E17E7F475004EF614 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529C2B2D17E7F475004EF614 /* UIKit.framework */; };
 		529C2B5617E7F475004EF614 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 529C2B5417E7F475004EF614 /* InfoPlist.strings */; };
 		529C2B5817E7F475004EF614 /* DynamicBehaviorsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B5717E7F475004EF614 /* DynamicBehaviorsSampleTests.m */; };
+		529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		529C2B5317E7F475004EF614 /* DynamicBehaviorsSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicBehaviorsSampleTests-Info.plist"; sourceTree = "<group>"; };
 		529C2B5517E7F475004EF614 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		529C2B5717E7F475004EF614 /* DynamicBehaviorsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicBehaviorsSampleTests.m; sourceTree = "<group>"; };
+		529C2B6117E7F6BE004EF614 /* ZJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTableViewController.h; sourceTree = "<group>"; };
+		529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			children = (
 				529C2B3817E7F475004EF614 /* ZJAppDelegate.h */,
 				529C2B3917E7F475004EF614 /* ZJAppDelegate.m */,
+				529C2B6117E7F6BE004EF614 /* ZJTableViewController.h */,
+				529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */,
 				529C2B3B17E7F475004EF614 /* Main_iPhone.storyboard */,
 				529C2B3E17E7F475004EF614 /* Main_iPad.storyboard */,
 				529C2B4117E7F475004EF614 /* ZJViewController.h */,
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				529C2B4317E7F475004EF614 /* ZJViewController.m in Sources */,
+				529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */,
 				529C2B3A17E7F475004EF614 /* ZJAppDelegate.m in Sources */,
 				529C2B3617E7F475004EF614 /* main.m in Sources */,
 			);
@@ -397,6 +403,7 @@
 				GCC_PREFIX_HEADER = "DynamicBehaviorsSample/DynamicBehaviorsSample-Prefix.pch";
 				INFOPLIST_FILE = "DynamicBehaviorsSample/DynamicBehaviorsSample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,6 +417,7 @@
 				GCC_PREFIX_HEADER = "DynamicBehaviorsSample/DynamicBehaviorsSample-Prefix.pch";
 				INFOPLIST_FILE = "DynamicBehaviorsSample/DynamicBehaviorsSample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

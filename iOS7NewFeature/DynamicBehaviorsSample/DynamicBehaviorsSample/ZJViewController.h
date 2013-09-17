@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef enum DynamicBehavior
+{
+    DynamicGravity = 0,
+
+} DynamicBehavior;
 
 @interface ZJViewController : UIViewController<UIDynamicAnimatorDelegate>
-
+@property (nonatomic, assign) DynamicBehavior dynamic;
 @end
