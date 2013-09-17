@@ -1,5 +1,5 @@
 //
-//  ZJViewController.h
+//  ZJTableViewController.h
 //  DynamicBehaviorsSample
 //
 //  Created by Zhu J on 9/17/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZJViewController : UIViewController<UIDynamicAnimatorDelegate>
+@interface ZJTableViewController : UITableViewController
 
 @end
