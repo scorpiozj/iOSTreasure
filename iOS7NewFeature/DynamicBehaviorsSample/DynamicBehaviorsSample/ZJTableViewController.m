@@ -35,7 +35,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Dynamic Behavior";
-    self.dataArray = @[@"UIGravityBehavior",@"UICollisionBehavior"];
+    self.dataArray = @[@"UIGravityBehavior",@"UICollisionBehavior",@"UIAttachmentBehavior"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -80,6 +80,7 @@
 {
     ZJViewController *vc = [[ZJViewController alloc] initWithNibName:nil bundle:nil];
     vc.dynamic = [indexPath row];
+    vc.title = [self.dataArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
 }
 /*

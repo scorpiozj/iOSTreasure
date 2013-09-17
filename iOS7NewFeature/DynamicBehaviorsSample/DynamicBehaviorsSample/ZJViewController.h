@@ -11,6 +11,7 @@ typedef enum DynamicBehavior
 {
     DynamicGravity = 0,
     DynamicCollision,
+    DynamicAttachment,
 
 } DynamicBehavior;
 

@@ -92,52 +92,49 @@
 
 - (void)addCollision
 {
-//    static int num = 0;
-//    if (num %2 == 0)
-//    {
-//        __weak ZJViewController *weakSelf = self;
-//        
-//        
-//        self.redView.center = CGPointMake(40, 40);
-//        self.blueView.center = CGPointMake(280, 280);
-//        [UIView animateWithDuration:2 animations:^{
-//            
-//        } completion:^(BOOL finished) {
-//            UICollisionBehavior *collison = [[UICollisionBehavior alloc] initWithItems:@[weakSelf.redView,weakSelf.blueView]];
-//            collison.translatesReferenceBoundsIntoBoundary = YES;
-//            
-//            [weakSelf.animator addBehavior:collison];
-//        }];
-//
-//    }
-//    else
-//    {
-//        
-//    }
-//    num ++;
-    
-    
-    [UIView animateWithDuration:2 animations:^{
-        self.redView.center = CGPointMake(50, 400);
-        self.blueView.center = CGPointMake(180, 90);
+    static int num = 0;
+    __weak ZJViewController *weakSelf = self;
+    [self.animator removeAllBehaviors];
+    if (num %2 == 0)
+    {
         
-    } completion:^(BOOL finished) {
-        UICollisionBehavior *pathCollision = [[UICollisionBehavior alloc] initWithItems:@[self.redView,self.blueView]];
-        [pathCollision addBoundaryWithIdentifier:@"vertical" fromPoint:CGPointMake(0, 400) toPoint:CGPointMake(320,400)];
-        [pathCollision addBoundaryWithIdentifier:@"horizental" fromPoint:CGPointMake(320,400) toPoint:CGPointMake(160,80)];
         
-        //take the reference view's boundary as the boundary
-//        pathCollision.translatesReferenceBoundsIntoBoundary = YES;
-        [self.animator addBehavior:pathCollision];
+        
+        self.redView.center = CGPointMake(40, 40);
+        self.blueView.center = CGPointMake(280, 280);
+        [UIView animateWithDuration:2 animations:^{
+            self.redView.center = CGPointMake(160, 200);
+            self.blueView.center = CGPointMake(180, 220);
 
-    }];
-    
-    
-    
-    
-    
-    
-    
+        } completion:^(BOOL finished) {
+            UICollisionBehavior *collison = [[UICollisionBehavior alloc] initWithItems:@[weakSelf.redView,weakSelf.blueView]];
+            collison.translatesReferenceBoundsIntoBoundary = YES;
+            
+            [weakSelf.animator addBehavior:collison];
+        }];
+
+    }
+    else
+    {
+        
+        self.redView.center = CGPointMake(40, 40);
+        self.blueView.center = CGPointMake(80, 40);
+        [UIView animateWithDuration:2 animations:^{
+            self.redView.center = CGPointMake(50, 400);
+            self.blueView.center = CGPointMake(180, 90);
+            
+        } completion:^(BOOL finished) {
+            UICollisionBehavior *pathCollision = [[UICollisionBehavior alloc] initWithItems:@[weakSelf.redView,weakSelf.blueView]];
+            [pathCollision addBoundaryWithIdentifier:@"vertical" fromPoint:CGPointMake(0, 400) toPoint:CGPointMake(320,400)];
+            [pathCollision addBoundaryWithIdentifier:@"horizental" fromPoint:CGPointMake(320,400) toPoint:CGPointMake(160,80)];
+            
+            //take the reference view's boundary as the boundary
+            //        pathCollision.translatesReferenceBoundsIntoBoundary = YES;
+            [weakSelf.animator addBehavior:pathCollision];
+            
+        }];
+    }
+    num ++;
 }
 #pragma mark -UIDynamicAnimatorDelegate
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
