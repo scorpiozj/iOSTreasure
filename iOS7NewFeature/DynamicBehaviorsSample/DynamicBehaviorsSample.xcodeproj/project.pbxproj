@@ -25,6 +25,7 @@
 		529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */; };
 		529C2B6617E832D1004EF614 /* ZJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6517E832D0004EF614 /* ZJView.m */; };
 		52D8C0E217E93FDC00185EAD /* ZJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */; };
+		52D8C0E417E986E100185EAD /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 52D8C0E317E986E100185EAD /* ReadMe.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		529C2B6517E832D0004EF614 /* ZJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJView.m; sourceTree = "<group>"; };
 		52D8C0E017E93FDC00185EAD /* ZJDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDynamicViewController.h; sourceTree = "<group>"; };
 		52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicViewController.m; sourceTree = "<group>"; };
+		52D8C0E317E986E100185EAD /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		529C2B1D17E7F475004EF614 = {
 			isa = PBXGroup;
 			children = (
+				52D8C0E317E986E100185EAD /* ReadMe.rtf */,
 				529C2B2F17E7F475004EF614 /* DynamicBehaviorsSample */,
 				529C2B5117E7F475004EF614 /* DynamicBehaviorsSampleTests */,
 				529C2B2817E7F475004EF614 /* Frameworks */,
@@ -250,6 +253,7 @@
 				529C2B4017E7F475004EF614 /* Main_iPad.storyboard in Resources */,
 				529C2B4517E7F475004EF614 /* Images.xcassets in Resources */,
 				529C2B3D17E7F475004EF614 /* Main_iPhone.storyboard in Resources */,
+				52D8C0E417E986E100185EAD /* ReadMe.rtf in Resources */,
 				529C2B3417E7F475004EF614 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -73,10 +73,7 @@
     [redgravity setAngle:M_PI_2-.3 magnitude:.3];
     [self.animator addBehavior:redgravity];
     
-    for (int i=0; i<3; i++)
-    {
-        
-    }
+
     UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.redView]];
     collision.collisionDelegate = self;
     [collision addBoundaryWithIdentifier:@"bottomLine" fromPoint:CGPointMake(0, 400) toPoint:CGPointMake(320, 400)];
