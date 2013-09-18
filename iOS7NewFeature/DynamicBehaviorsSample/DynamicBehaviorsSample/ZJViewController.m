@@ -96,11 +96,13 @@
         case DynamicAttachment:
         {
             [self addAttachment];
+            break;
         }
         case DynamicSnap:
         {
             [self addSnap];
         }
+            break;
         case DynamicPush:
         {
             [self addPush];
@@ -177,14 +179,10 @@
 {
     [self.animator removeAllBehaviors];
     
-
-//    int random = arc4random();
-//    CGPoint anchorPoint = CGPointMake(random % 320, random%480);
-    
     _attachment = [[UIAttachmentBehavior alloc] initWithItem:self.redView offsetFromCenter:UIOffsetMake(0, 0) attachedToAnchor:CGPointMake(80, 60)];
     
-    [self.attachment setDamping:.3];
-//    [attachment setFrequency:100];
+    [self.attachment setDamping:.2];
+    [self.attachment setFrequency:10];
 //    [attachment setLength:80];
     [self.animator addBehavior:self.attachment];
     
@@ -194,16 +192,6 @@
 //    [secAttachment setFrequency:100];
 //    [secAttachment setLength:100];
     [self.animator addBehavior:secAttachment];
-    
-//    __weak UIAttachmentBehavior *weakAttach = self.attachment;
-//    [UIView animateWithDuration:3 animations:^{
-//        weakAttach.anchorPoint = CGPointMake(200, 100);
-//    } completion:^(BOOL finished) {
-//        self.redView.center = CGPointMake(160, 150);
-//        self.blueView.center = CGPointMake(200, 320);
-//
-//    }];
-
     
 }
 

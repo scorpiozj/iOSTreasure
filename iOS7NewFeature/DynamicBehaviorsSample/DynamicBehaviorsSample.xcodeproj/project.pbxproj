@@ -123,8 +123,6 @@
 		529C2B2F17E7F475004EF614 /* DynamicBehaviorsSample */ = {
 			isa = PBXGroup;
 			children = (
-				52D8C0E017E93FDC00185EAD /* ZJDynamicViewController.h */,
-				52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */,
 				529C2B3817E7F475004EF614 /* ZJAppDelegate.h */,
 				529C2B3917E7F475004EF614 /* ZJAppDelegate.m */,
 				529C2B6117E7F6BE004EF614 /* ZJTableViewController.h */,
@@ -133,6 +131,8 @@
 				529C2B3E17E7F475004EF614 /* Main_iPad.storyboard */,
 				529C2B4117E7F475004EF614 /* ZJViewController.h */,
 				529C2B4217E7F475004EF614 /* ZJViewController.m */,
+				52D8C0E017E93FDC00185EAD /* ZJDynamicViewController.h */,
+				52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */,
 				529C2B4417E7F475004EF614 /* Images.xcassets */,
 				529C2B6417E832D0004EF614 /* ZJView.h */,
 				529C2B6517E832D0004EF614 /* ZJView.m */,

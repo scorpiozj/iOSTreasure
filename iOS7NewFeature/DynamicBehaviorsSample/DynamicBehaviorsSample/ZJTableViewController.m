@@ -8,6 +8,7 @@
 
 #import "ZJTableViewController.h"
 #import "ZJViewController.h"
+#import "ZJDynamicViewController.h"
 
 @interface ZJTableViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -35,7 +36,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Dynamic Behavior";
-    self.dataArray = @[@"UIGravityBehavior",@"UICollisionBehavior",@"UIAttachmentBehavior",@"UISnapBehavior",@"UIPushBehavior"];
+    self.dataArray = @[@"UIGravityBehavior",@"UICollisionBehavior",@"UIAttachmentBehavior",@"UISnapBehavior",@"UIPushBehavior",@"DynamicCollection"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
@@ -78,10 +79,21 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZJViewController *vc = [[ZJViewController alloc] initWithNibName:nil bundle:nil];
-    vc.dynamic = [indexPath row];
-    vc.title = [self.dataArray objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (indexPath.row == [self.dataArray count] - 1)
+    {
+        ZJDynamicViewController *dynamicVC = [[ZJDynamicViewController alloc] initWithNibName:nil bundle:nil];
+        dynamicVC.title = [self.dataArray objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:dynamicVC animated:YES];
+
+    }
+    else
+    {
+        ZJViewController *vc = [[ZJViewController alloc] initWithNibName:nil bundle:nil];
+        vc.dynamic = [indexPath row];
+        vc.title = [self.dataArray objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 /*
 // Override to support conditional editing of the table view.

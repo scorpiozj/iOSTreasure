@@ -14,6 +14,7 @@ typedef enum DynamicBehavior
     DynamicAttachment,
     DynamicSnap,
     DynamicPush,
+    DynamicNone = -1,
 
 } DynamicBehavior;
 
