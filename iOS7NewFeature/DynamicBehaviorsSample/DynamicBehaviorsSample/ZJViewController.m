@@ -224,6 +224,7 @@
     
     UIPushBehavior *bluePush = [[UIPushBehavior alloc] initWithItems:@[self.blueView] mode:UIPushBehaviorModeInstantaneous];
     [bluePush setAngle:1.3 magnitude:1];
+    [bluePush setTargetOffsetFromCenter:UIOffsetMake(5, 3) forItem:self.blueView];
     [self.animator addBehavior:bluePush];
 }
 - (void)attachPanAction:(UIPanGestureRecognizer *)recognizer
