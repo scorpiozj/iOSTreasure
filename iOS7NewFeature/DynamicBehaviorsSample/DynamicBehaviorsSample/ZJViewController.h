@@ -13,6 +13,7 @@ typedef enum DynamicBehavior
     DynamicCollision,
     DynamicAttachment,
     DynamicSnap,
+    DynamicPush,
 
 } DynamicBehavior;
 

@@ -101,6 +101,10 @@
         {
             [self addSnap];
         }
+        case DynamicPush:
+        {
+            [self addPush];
+        }
             break;
         default:
             break;
@@ -209,7 +213,19 @@
     snap.damping = .2;
     [self.animator addBehavior:snap];
 }
-
+- (void)addPush
+{
+    self.redView.center = CGPointMake(100, 60);
+    self.blueView.center = CGPointMake(200, 80);
+    [self.animator removeAllBehaviors];
+    UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[self.redView] mode:UIPushBehaviorModeContinuous];
+    [push setAngle:1.7 magnitude:.3];
+    [self.animator addBehavior:push];
+    
+    UIPushBehavior *bluePush = [[UIPushBehavior alloc] initWithItems:@[self.blueView] mode:UIPushBehaviorModeInstantaneous];
+    [bluePush setAngle:1.3 magnitude:1];
+    [self.animator addBehavior:bluePush];
+}
 - (void)attachPanAction:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint translation = [recognizer locationInView:self.view];
