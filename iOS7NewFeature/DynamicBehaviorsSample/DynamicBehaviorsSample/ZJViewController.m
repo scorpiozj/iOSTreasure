@@ -97,6 +97,10 @@
         {
             [self addAttachment];
         }
+        case DynamicSnap:
+        {
+            [self addSnap];
+        }
             break;
         default:
             break;
@@ -197,6 +201,13 @@
 //    }];
 
     
+}
+
+- (void)addSnap
+{
+    UISnapBehavior *snap = [[UISnapBehavior alloc] initWithItem:self.redView snapToPoint:CGPointMake(160, 200)];
+    snap.damping = .2;
+    [self.animator addBehavior:snap];
 }
 
 - (void)attachPanAction:(UIPanGestureRecognizer *)recognizer
