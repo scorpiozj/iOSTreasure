@@ -24,6 +24,7 @@
 		529C2B5817E7F475004EF614 /* DynamicBehaviorsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B5717E7F475004EF614 /* DynamicBehaviorsSampleTests.m */; };
 		529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */; };
 		529C2B6617E832D1004EF614 /* ZJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C2B6517E832D0004EF614 /* ZJView.m */; };
+		52D8C0E217E93FDC00185EAD /* ZJDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		529C2B6217E7F6BE004EF614 /* ZJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTableViewController.m; sourceTree = "<group>"; };
 		529C2B6417E832D0004EF614 /* ZJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJView.h; sourceTree = "<group>"; };
 		529C2B6517E832D0004EF614 /* ZJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJView.m; sourceTree = "<group>"; };
+		52D8C0E017E93FDC00185EAD /* ZJDynamicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDynamicViewController.h; sourceTree = "<group>"; };
+		52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		529C2B2F17E7F475004EF614 /* DynamicBehaviorsSample */ = {
 			isa = PBXGroup;
 			children = (
+				52D8C0E017E93FDC00185EAD /* ZJDynamicViewController.h */,
+				52D8C0E117E93FDC00185EAD /* ZJDynamicViewController.m */,
 				529C2B3817E7F475004EF614 /* ZJAppDelegate.h */,
 				529C2B3917E7F475004EF614 /* ZJAppDelegate.m */,
 				529C2B6117E7F6BE004EF614 /* ZJTableViewController.h */,
@@ -268,6 +273,7 @@
 				529C2B6317E7F6BE004EF614 /* ZJTableViewController.m in Sources */,
 				529C2B3A17E7F475004EF614 /* ZJAppDelegate.m in Sources */,
 				529C2B3617E7F475004EF614 /* main.m in Sources */,
+				52D8C0E217E93FDC00185EAD /* ZJDynamicViewController.m in Sources */,
 				529C2B6617E832D1004EF614 /* ZJView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +495,7 @@
 				529C2B5D17E7F475004EF614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		529C2B5E17E7F475004EF614 /* Build configuration list for PBXNativeTarget "DynamicBehaviorsSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +504,7 @@
 				529C2B6017E7F475004EF614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
