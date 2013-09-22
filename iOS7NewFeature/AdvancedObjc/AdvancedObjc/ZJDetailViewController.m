@@ -16,7 +16,10 @@
 @implementation ZJDetailViewController
 
 #pragma mark - Managing the detail item
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    [super initWithNibName:<#nibNameOrNil#> bundle:<#nibBundleOrNil#>]
+}
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
@@ -52,7 +55,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(NSDictionary *)exampleFactoryUsage {
+    NSDictionary *var = @[];
+    return var;
+}
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController

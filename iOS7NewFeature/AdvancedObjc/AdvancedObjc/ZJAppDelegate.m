@@ -7,7 +7,8 @@
 //
 
 #import "ZJAppDelegate.h"
-
+#import <iAd/iAd.h>
+@import iAd.ADBannerView;
 @implementation ZJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +19,8 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    ADBannerView *banner = [[ADBannerView alloc] init];
     return YES;
 }
 							

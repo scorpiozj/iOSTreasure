@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@import iAd.ADBannerView;
 @interface ZJAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

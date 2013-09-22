@@ -15,6 +15,19 @@
 }
 @end
 
+
+enum MyEnum : NSUInteger { ABC, JKL, XYZ };
+typedef enum MyEnum MyEnum;
+
+
+typedef NS_ENUM(NSUInteger, MyEnum2) { kABC, kJKL, kXYZ };
+
+typedef NS_OPTIONS(NSUInteger, MyOptions) {
+    kFaster  = (1 << 3),
+    kBetter  = (1 << 4),
+    kAwesome = (1 << 5)
+};
+
 @implementation ZJMasterViewController
 
 - (void)awakeFromNib
@@ -35,6 +48,10 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (ZJDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    
+    MyEnum testNum = kABC;;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,4 +140,10 @@
     }
 }
 
+
+-(BOOL)exampleTagUsage:(NSObject *)arg {
+
+
+    return [arg isKindOfClass: @"fd"];
+}
 @end
