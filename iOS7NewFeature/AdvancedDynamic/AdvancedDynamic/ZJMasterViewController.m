@@ -8,7 +8,8 @@
 
 #import "ZJMasterViewController.h"
 
-#import "ZJDetailViewController.h"
+//#import "ZJDetailViewController.h"
+#import "ZJDynamicsViewController.h"
 
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
@@ -36,10 +37,10 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
 //    self.detailViewController = (ZJDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+        _objects = [[NSMutableArray alloc] initWithObjects:@"1", nil];
         
     }
-    [_objects addObject:@"1"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,6 +123,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    switch (indexPath.row)
+    {
+        case 0:
+        {
+            ZJDynamicsViewController *dynamicsVC = [[ZJDynamicsViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:dynamicsVC animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        NSDate *object = _objects[indexPath.row];
 //        self.detailViewController.detailItem = object;
