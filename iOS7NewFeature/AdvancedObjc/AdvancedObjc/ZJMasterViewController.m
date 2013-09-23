@@ -51,6 +51,14 @@ typedef NS_OPTIONS(NSUInteger, MyOptions) {
     
     
     MyEnum testNum = kABC;;
+    CGSize testSize = {5,100};
+    CGRect testRect = {2,2,100,100};
+    
+    
+    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(10, 30, 40, 100)];
+    UIColor *redColor = [UIColor redColor];
+    redView.backgroundColor = [UIColor redColor];
+    
     
 }
 

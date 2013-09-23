@@ -16,10 +16,10 @@
 @implementation ZJDetailViewController
 
 #pragma mark - Managing the detail item
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    [super initWithNibName:<#nibNameOrNil#> bundle:<#nibBundleOrNil#>]
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//
+//}
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {

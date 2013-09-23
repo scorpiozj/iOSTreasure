@@ -8,7 +8,7 @@
 
 #import "ZJAppDelegate.h"
 #import <iAd/iAd.h>
-@import iAd.ADBannerView;
+//@import iAd.ADBannerView;
 @implementation ZJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
