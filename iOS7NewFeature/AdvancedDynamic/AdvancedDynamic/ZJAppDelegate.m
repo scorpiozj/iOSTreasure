@@ -7,17 +7,26 @@
 //
 
 #import "ZJAppDelegate.h"
+#import "ZJMasterViewController.h"
 
 @implementation ZJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    ZJMasterViewController *master = [[ZJMasterViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:master];
+    self.window.rootViewController = navController;
+    
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
