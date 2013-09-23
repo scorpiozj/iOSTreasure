@@ -65,8 +65,16 @@
     [self.animator addBehavior:gravity];
     
     
-    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
-    [self.view addGestureRecognizer:pangesture];
+//    UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+//    [self.view addGestureRecognizer:pangesture];
+    UIPanGestureRecognizer *redPangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self.redView addGestureRecognizer:redPangesture];
+    
+    UIPanGestureRecognizer *bluePangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self.blueView addGestureRecognizer:bluePangesture];
+    
+    UIPanGestureRecognizer *greenPangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    [self.greenView addGestureRecognizer:greenPangesture];
  }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +85,11 @@
 
 - (void)panAction:(UIGestureRecognizer *)gesture
 {
+    UIView *gestureView = [gesture view];
+    CGPoint touchPoint = [gesture locationInView:self.view];
+    gestureView.center = touchPoint;
+    
+    [self.animator updateItemUsingCurrentState:gestureView];
 }
 
 @end
