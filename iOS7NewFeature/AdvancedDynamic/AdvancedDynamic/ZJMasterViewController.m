@@ -10,6 +10,7 @@
 
 //#import "ZJDetailViewController.h"
 #import "ZJDynamicsViewController.h"
+#import "ZJCollisionsViewController.h"
 
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
@@ -31,13 +32,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//    self.navigationItem.rightBarButtonItem = addButton;
-//    self.detailViewController = (ZJDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
     if (!_objects) {
-        _objects = [[NSMutableArray alloc] initWithObjects:@"1", nil];
+        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collide Objects", nil];
         
     }
     
@@ -123,14 +120,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *obj = _objects[indexPath.row];
     switch (indexPath.row)
     {
         case 0:
         {
             ZJDynamicsViewController *dynamicsVC = [[ZJDynamicsViewController alloc] initWithNibName:nil bundle:nil];
+            dynamicsVC.title = obj;
             [self.navigationController pushViewController:dynamicsVC animated:YES];
             break;
         }
+        case 1:
+        {
+            ZJCollisionsViewController *dynamicsVC = [[ZJCollisionsViewController alloc] initWithNibName:nil bundle:nil];
+            dynamicsVC.title = obj;
+            [self.navigationController pushViewController:dynamicsVC animated:YES];
+            break;
+        }
+   
         default:
             break;
     }

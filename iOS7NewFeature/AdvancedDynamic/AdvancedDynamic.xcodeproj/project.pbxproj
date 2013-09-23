@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5205A26917F0081900778B4B /* ZJDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26817F0081900778B4B /* ZJDynamicsViewController.m */; };
+		5205A26C17F019A500778B4B /* ZJCollisionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */; };
 		527789A417EFDE0C00C689AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A317EFDE0C00C689AC /* Foundation.framework */; };
 		527789A617EFDE0C00C689AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A517EFDE0C00C689AC /* CoreGraphics.framework */; };
 		527789A817EFDE0C00C689AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A717EFDE0C00C689AC /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		5205A26717F0081900778B4B /* ZJDynamicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDynamicsViewController.h; sourceTree = "<group>"; };
 		5205A26817F0081900778B4B /* ZJDynamicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDynamicsViewController.m; sourceTree = "<group>"; };
+		5205A26A17F019A500778B4B /* ZJCollisionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollisionsViewController.h; sourceTree = "<group>"; };
+		5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollisionsViewController.m; sourceTree = "<group>"; };
 		527789A017EFDE0C00C689AC /* AdvancedDynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedDynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527789A317EFDE0C00C689AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527789A517EFDE0C00C689AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 				527789BC17EFDE0C00C689AC /* ZJMasterViewController.m */,
 				5205A26717F0081900778B4B /* ZJDynamicsViewController.h */,
 				5205A26817F0081900778B4B /* ZJDynamicsViewController.m */,
+				5205A26A17F019A500778B4B /* ZJCollisionsViewController.h */,
+				5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */,
 				527789BE17EFDE0C00C689AC /* ZJDetailViewController.h */,
 				527789BF17EFDE0C00C689AC /* ZJDetailViewController.m */,
 				527789C117EFDE0C00C689AC /* Images.xcassets */,
@@ -269,6 +274,7 @@
 				527789C017EFDE0C00C689AC /* ZJDetailViewController.m in Sources */,
 				527789B417EFDE0C00C689AC /* ZJAppDelegate.m in Sources */,
 				527789B017EFDE0C00C689AC /* main.m in Sources */,
+				5205A26C17F019A500778B4B /* ZJCollisionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
