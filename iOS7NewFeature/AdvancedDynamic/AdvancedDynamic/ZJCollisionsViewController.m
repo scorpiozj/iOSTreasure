@@ -67,7 +67,7 @@
     
     UIPanGestureRecognizer *pangesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
     [self.view addGestureRecognizer:pangesture];
-}
+ }
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,11 +77,6 @@
 
 - (void)panAction:(UIGestureRecognizer *)gesture
 {
-    //    [self.animator addBehavior:self.attachment];
-    CGPoint touchPoint = [gesture locationInView:self.view];
-    
-    self.redView.center = touchPoint;
-    
 }
 
 @end
