@@ -7,9 +7,10 @@
 //
 
 #import "ZJDetailViewController.h"
-
+#import "ZJBouncyFallBehavior.h";
 @interface ZJDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) UIDynamicAnimator *animator;
 - (void)configureView;
 @end
 
@@ -44,7 +45,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+//    [self configureView];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    _detailDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 200, 200, 40)];
+    self.detailDescriptionLabel.text = @"custom behaviors";
+    [self.detailDescriptionLabel setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:self.detailDescriptionLabel];
+    
+    if(!_animator)
+    {
+        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    }
+    ZJBouncyFallBehavior *behavioe = [[ZJBouncyFallBehavior alloc] initWithItems:@[self.detailDescriptionLabel]];
+    [self.animator addBehavior:behavioe];
 }
 
 - (void)didReceiveMemoryWarning
