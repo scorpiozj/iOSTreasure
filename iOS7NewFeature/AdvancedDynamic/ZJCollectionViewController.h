@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJCollectionCell : UICollectionViewCell
-
+- (void)bindData:(id)object;
 @end
 
 
 @interface ZJCollectionViewController : UICollectionViewController
+- (instancetype)initWithSampleLayout;
 
 @end
