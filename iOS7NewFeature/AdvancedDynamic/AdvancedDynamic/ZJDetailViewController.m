@@ -7,7 +7,7 @@
 //
 
 #import "ZJDetailViewController.h"
-#import "ZJBouncyFallBehavior.h";
+#import "ZJBouncyFallBehavior.h"
 @interface ZJDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
@@ -43,6 +43,7 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    [self configureView];

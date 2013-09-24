@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+@interface ZJFollowLayout : UICollectionViewFlowLayout
+
+@end
+
+
 @interface ZJCollectionCell : UICollectionViewCell
 - (void)bindData:(id)object;
 @end

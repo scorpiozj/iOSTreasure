@@ -12,6 +12,7 @@
 #import "ZJDynamicsViewController.h"
 #import "ZJCollisionsViewController.h"
 #import "ZJCollectionViewController.h"
+#import "ZJDetailViewController.h"
 
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
@@ -35,7 +36,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (!_objects) {
-        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections", nil];
+        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections",@"Custom Behaviors", nil];
         
     }
     
@@ -143,6 +144,13 @@
             ZJCollectionViewController  *collectionsVC = [[ZJCollectionViewController alloc] initWithSampleLayout];
             collectionsVC.title = obj;
             [self.navigationController pushViewController:collectionsVC animated:YES];
+            break;
+        }
+        case 3:
+        {
+            ZJDetailViewController *detailVC = [[ZJDetailViewController alloc] initWithNibName:Nil bundle:nil];
+            detailVC.title = obj;
+            [self.navigationController pushViewController:detailVC animated:YES];
             break;
         }
         default:

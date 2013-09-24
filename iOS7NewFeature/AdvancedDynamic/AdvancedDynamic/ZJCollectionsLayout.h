@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define WIDTH       (40)
+#define HEIGHT      (40)
+#define FREQUENCY   (2.0f)
+#define DAMPING     (.5f)
+
+
+
+
 @interface DraggableLayout : UICollectionViewFlowLayout
-- (void)setDraggedIndexPaths:(NSArray *)selectedIndexPaths fromPoint:(CGPoint)p;
+- (void)startDraggingIndexPaths:(NSArray *)selectedIndexPaths fromPoint:(CGPoint)p;
 - (void)updateDragLocation:(CGPoint)p;
 - (void)clearDraggedIndexPaths;
 @end
