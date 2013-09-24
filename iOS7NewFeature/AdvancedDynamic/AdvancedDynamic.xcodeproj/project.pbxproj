@@ -35,6 +35,7 @@
 		52DF143D17F1352A00FEBB08 /* 6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 52DF143417F1352A00FEBB08 /* 6.JPG */; };
 		52DF143E17F1352A00FEBB08 /* 7.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 52DF143517F1352A00FEBB08 /* 7.JPG */; };
 		52DF143F17F1352A00FEBB08 /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 52DF143617F1352A00FEBB08 /* 8.JPG */; };
+		52FDEA9017F166DA005ADFA3 /* ZJBouncyFallBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FDEA8F17F166DA005ADFA3 /* ZJBouncyFallBehavior.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		52DF143417F1352A00FEBB08 /* 6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.JPG; sourceTree = "<group>"; };
 		52DF143517F1352A00FEBB08 /* 7.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.JPG; sourceTree = "<group>"; };
 		52DF143617F1352A00FEBB08 /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
+		52FDEA8E17F166DA005ADFA3 /* ZJBouncyFallBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJBouncyFallBehavior.h; sourceTree = "<group>"; };
+		52FDEA8F17F166DA005ADFA3 /* ZJBouncyFallBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJBouncyFallBehavior.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				52DF142B17F1349000FEBB08 /* ZJCollectionViewController.h */,
 				52DF142C17F1349000FEBB08 /* ZJCollectionViewController.m */,
 				527789BE17EFDE0C00C689AC /* ZJDetailViewController.h */,
+				52FDEA8E17F166DA005ADFA3 /* ZJBouncyFallBehavior.h */,
+				52FDEA8F17F166DA005ADFA3 /* ZJBouncyFallBehavior.m */,
 				527789BF17EFDE0C00C689AC /* ZJDetailViewController.m */,
 				527789C117EFDE0C00C689AC /* Images.xcassets */,
 				527789AA17EFDE0C00C689AC /* Supporting Files */,
@@ -314,6 +319,7 @@
 				5205A26917F0081900778B4B /* ZJDynamicsViewController.m in Sources */,
 				52DF142D17F1349000FEBB08 /* ZJCollectionViewController.m in Sources */,
 				527789C017EFDE0C00C689AC /* ZJDetailViewController.m in Sources */,
+				52FDEA9017F166DA005ADFA3 /* ZJBouncyFallBehavior.m in Sources */,
 				527789B417EFDE0C00C689AC /* ZJAppDelegate.m in Sources */,
 				527789B017EFDE0C00C689AC /* main.m in Sources */,
 				5205A26C17F019A500778B4B /* ZJCollisionsViewController.m in Sources */,
