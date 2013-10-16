@@ -23,6 +23,7 @@
 		52136A36180E51880001AF25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52136A34180E51880001AF25 /* InfoPlist.strings */; };
 		52136A38180E51880001AF25 /* RuntimeStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A37180E51880001AF25 /* RuntimeStudyTests.m */; };
 		52136A43180E52640001AF25 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A42180E52640001AF25 /* MyClass.m */; };
+		52136AAA180E69BE0001AF25 /* InvocationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136AA9180E69BE0001AF25 /* InvocationClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		52136A37180E51880001AF25 /* RuntimeStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeStudyTests.m; sourceTree = "<group>"; };
 		52136A41180E52640001AF25 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
 		52136A42180E52640001AF25 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
+		52136AA8180E69BE0001AF25 /* InvocationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvocationClass.h; sourceTree = "<group>"; };
+		52136AA9180E69BE0001AF25 /* InvocationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvocationClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 			children = (
 				52136A41180E52640001AF25 /* MyClass.h */,
 				52136A42180E52640001AF25 /* MyClass.m */,
+				52136AA8180E69BE0001AF25 /* InvocationClass.h */,
+				52136AA9180E69BE0001AF25 /* InvocationClass.m */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52136A43180E52640001AF25 /* MyClass.m in Sources */,
+				52136AAA180E69BE0001AF25 /* InvocationClass.m in Sources */,
 				52136A23180E51880001AF25 /* ZJViewController.m in Sources */,
 				52136A1A180E51880001AF25 /* ZJAppDelegate.m in Sources */,
 				52136A16180E51880001AF25 /* main.m in Sources */,
