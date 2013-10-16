@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		52136A52180E5E9A0001AF25 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52136A51180E5E990001AF25 /* Cocoa.framework */; };
 		52136A5C180E5E9A0001AF25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52136A5A180E5E9A0001AF25 /* InfoPlist.strings */; };
+		52136A65180E5EF90001AF25 /* DynamicLoadClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A64180E5EF90001AF25 /* DynamicLoadClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		52136A59180E5E9A0001AF25 /* DynamicClassBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DynamicClassBundle-Info.plist"; sourceTree = "<group>"; };
 		52136A5B180E5E9A0001AF25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52136A5D180E5E9A0001AF25 /* DynamicClassBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DynamicClassBundle-Prefix.pch"; sourceTree = "<group>"; };
+		52136A63180E5EF90001AF25 /* DynamicLoadClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicLoadClass.h; sourceTree = "<group>"; };
+		52136A64180E5EF90001AF25 /* DynamicLoadClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicLoadClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				52136A58180E5E9A0001AF25 /* Supporting Files */,
+				52136A63180E5EF90001AF25 /* DynamicLoadClass.h */,
+				52136A64180E5EF90001AF25 /* DynamicLoadClass.m */,
 			);
 			path = DynamicClassBundle;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52136A65180E5EF90001AF25 /* DynamicLoadClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
