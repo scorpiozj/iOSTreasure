@@ -18,6 +18,7 @@
 		52136A93180E60110001AF25 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52136A72180E60110001AF25 /* Cocoa.framework */; };
 		52136A9B180E60110001AF25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52136A99180E60110001AF25 /* InfoPlist.strings */; };
 		52136A9D180E60110001AF25 /* BundleTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A9C180E60110001AF25 /* BundleTestTests.m */; };
+		52136AA7180E60460001AF25 /* DynamicClassBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52136AA6180E60460001AF25 /* DynamicClassBundle.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		52136A98180E60110001AF25 /* BundleTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BundleTestTests-Info.plist"; sourceTree = "<group>"; };
 		52136A9A180E60110001AF25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52136A9C180E60110001AF25 /* BundleTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BundleTestTests.m; sourceTree = "<group>"; };
+		52136AA6180E60460001AF25 /* DynamicClassBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DynamicClassBundle.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		52136A79180E60110001AF25 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52136AA6180E60460001AF25 /* DynamicClassBundle.bundle */,
 				52136A7A180E60110001AF25 /* BundleTest-Info.plist */,
 				52136A7B180E60110001AF25 /* InfoPlist.strings */,
 				52136A7E180E60110001AF25 /* main.m */,
@@ -234,6 +237,7 @@
 				52136A7D180E60110001AF25 /* InfoPlist.strings in Resources */,
 				52136A8B180E60110001AF25 /* Images.xcassets in Resources */,
 				52136A83180E60110001AF25 /* Credits.rtf in Resources */,
+				52136AA7180E60460001AF25 /* DynamicClassBundle.bundle in Resources */,
 				52136A89180E60110001AF25 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
