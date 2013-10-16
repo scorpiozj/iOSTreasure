@@ -7,6 +7,7 @@
 //
 
 #import "ZJViewController.h"
+#import "MyClass.h"
 
 @interface ZJViewController ()
 
@@ -18,6 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    MyClass *test = [[MyClass alloc] init];
+    [test performSelector:@selector(dynamicPrint) withObject:nil];
+    [test print];
 }
 
 - (void)didReceiveMemoryWarning

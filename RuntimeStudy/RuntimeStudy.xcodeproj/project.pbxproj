@@ -117,6 +117,7 @@
 		52136A0F180E51880001AF25 /* RuntimeStudy */ = {
 			isa = PBXGroup;
 			children = (
+				52136A44180E52CE0001AF25 /* Runtime */,
 				52136A18180E51880001AF25 /* ZJAppDelegate.h */,
 				52136A19180E51880001AF25 /* ZJAppDelegate.m */,
 				52136A1B180E51880001AF25 /* Main_iPhone.storyboard */,
@@ -125,8 +126,6 @@
 				52136A22180E51880001AF25 /* ZJViewController.m */,
 				52136A24180E51880001AF25 /* Images.xcassets */,
 				52136A10180E51880001AF25 /* Supporting Files */,
-				52136A41180E52640001AF25 /* MyClass.h */,
-				52136A42180E52640001AF25 /* MyClass.m */,
 			);
 			path = RuntimeStudy;
 			sourceTree = "<group>";
@@ -158,6 +157,15 @@
 				52136A34180E51880001AF25 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52136A44180E52CE0001AF25 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				52136A41180E52640001AF25 /* MyClass.h */,
+				52136A42180E52640001AF25 /* MyClass.m */,
+			);
+			name = Runtime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
