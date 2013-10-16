@@ -9,5 +9,12 @@
 #import "InvocationClass.h"
 
 @implementation InvocationClass
-
+- (void)invokePrint
+{
+    NSLog(@"It is called by Message Forwarding!");
+}
+- (void)notExistMethod
+{
+    [self invokePrint];
+}
 @end

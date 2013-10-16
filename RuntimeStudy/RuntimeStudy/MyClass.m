@@ -8,18 +8,27 @@
 
 #import "MyClass.h"
 #import <objc/runtime.h>
-
+#import "InvocationClass.h"
 @implementation MyClass
+{
+    InvocationClass *invocation;
+}
 
-#pragma mark - Private
-
+-(id)init
+{
+    if (self = [super init])
+    {
+        invocation = [[InvocationClass alloc] init];
+    }
+    return self;
+}
 
 #pragma mark -
+
 void dynaminPrintIMP(id self, SEL _cmd)
 {
     printf("this is print dynamically!\n");
 }
-
 
 + (BOOL)resolveInstanceMethod:(SEL)sel
 {
@@ -27,9 +36,9 @@ void dynaminPrintIMP(id self, SEL _cmd)
     if (sel == @selector(dynamicPrint))
     {
         class_addMethod([self class], sel, (IMP)dynaminPrintIMP, "v@:");
+        return YES;
     }
-    
-    return YES;
+    return [super resolveInstanceMethod:sel];
 }
 
 + (BOOL)resolveClassMethod:(SEL)sel
@@ -41,5 +50,26 @@ void dynaminPrintIMP(id self, SEL _cmd)
 - (void)print
 {
     DLog(@"print my self");
+}
+
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    DLog();
+    [anInvocation setTarget:invocation];
+    [anInvocation invoke];
+}
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
+{
+    if (aSelector == @selector(notExistMethod))
+    {
+        return [invocation methodSignatureForSelector:@selector(invokePrint)];
+    }
+    else
+    {
+        return [super methodSignatureForSelector:aSelector];
+    }
+    
+
 }
 @end

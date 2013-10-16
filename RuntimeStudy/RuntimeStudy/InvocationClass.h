@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface InvocationClass : NSObject
+- (void)invokePrint;
 
+- (void)notExistMethod;
 @end

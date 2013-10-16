@@ -20,8 +20,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     MyClass *test = [[MyClass alloc] init];
+    //test resolveInstanceMethod
     [test performSelector:@selector(dynamicPrint) withObject:nil];
     [test print];
+    
+    /*
+     use performSelector to call a notExistMethod as compile will have a check first
+     */
+//  [test notExistMethod];
+    [test performSelector:@selector(notExistMethod) withObject:nil];
+
 }
 
 - (void)didReceiveMemoryWarning
