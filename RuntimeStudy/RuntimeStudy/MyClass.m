@@ -56,8 +56,15 @@ void dynaminPrintIMP(id self, SEL _cmd)
 - (void)forwardInvocation:(NSInvocation *)anInvocation
 {
     DLog();
-    [anInvocation setTarget:invocation];
-    [anInvocation invoke];
+    if ([invocation respondsToSelector:[anInvocation selector]])
+    {
+        [anInvocation invokeWithTarget:invocation];
+    }
+    else
+    {
+        NSLog(@"can't forward message");
+    }
+
 }
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
