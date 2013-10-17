@@ -9,5 +9,13 @@
 #import "ZJPerson.h"
 
 @implementation ZJPerson
++ (void)load
+{
+    NSLogCMD;
+}
 
++ (void)initialize
+{
+    NSLogCMD;
+}
 @end
