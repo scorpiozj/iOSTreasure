@@ -59,7 +59,6 @@
         objc_property_t property = propertyArray[i];
         fprintf(stdout, "%s : %s\n",property_getName(property),property_getAttributes(property));
     }
-
     
 }
 - (void)didReceiveMemoryWarning

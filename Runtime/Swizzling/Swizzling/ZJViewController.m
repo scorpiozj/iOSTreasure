@@ -8,6 +8,7 @@
 
 #import "ZJViewController.h"
 #import "ZJPerson.h"
+#import "ZJView.h"
 
 
 @interface ZJPerson (printCategory)
@@ -67,6 +68,19 @@
     
     ZJPerson *person = [[ZJPerson alloc] init];
     person.familyName = @"Green";
+    
+    [self testMethodSwizzling];
+}
+- (void)testMethodSwizzling
+{
+    [ZJView swizzleSetFrame];
+    ZJView *testView = [[ZJView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    testView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:testView];
+    
+    UIView *normalView = [[UIView alloc] initWithFrame:CGRectMake(150, 0, 100, 100)];
+    normalView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:normalView];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJView : UIView
-
++ (void)swizzleSetFrame;
 @end
