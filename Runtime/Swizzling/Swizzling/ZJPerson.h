@@ -10,5 +10,5 @@
 
 @interface ZJPerson : NSObject
 @property (nonatomic, strong) NSString *familyName;
-@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSString *firstName;
 @end

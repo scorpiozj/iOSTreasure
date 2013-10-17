@@ -23,6 +23,7 @@
 		5271D4EB180F8A3F00ED3C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5271D4E9180F8A3F00ED3C30 /* InfoPlist.strings */; };
 		5271D4ED180F8A3F00ED3C30 /* SwizzlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4EC180F8A3F00ED3C30 /* SwizzlingTests.m */; };
 		5271D4F9180F8CAD00ED3C30 /* ZJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */; };
+		5271D4FD180F8EA200ED3C30 /* ZJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4FC180F8EA200ED3C30 /* ZJView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		5271D4EC180F8A3F00ED3C30 /* SwizzlingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwizzlingTests.m; sourceTree = "<group>"; };
 		5271D4F7180F8CAD00ED3C30 /* ZJPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPerson.h; sourceTree = "<group>"; };
 		5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPerson.m; sourceTree = "<group>"; };
+		5271D4FB180F8EA200ED3C30 /* ZJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJView.h; sourceTree = "<group>"; };
+		5271D4FC180F8EA200ED3C30 /* ZJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		5271D4C4180F8A3E00ED3C30 /* Swizzling */ = {
 			isa = PBXGroup;
 			children = (
+				5271D4FA180F8E8F00ED3C30 /* Help */,
 				5271D4F6180F8C9100ED3C30 /* Load */,
 				5271D4CD180F8A3E00ED3C30 /* ZJAppDelegate.h */,
 				5271D4CE180F8A3E00ED3C30 /* ZJAppDelegate.m */,
@@ -166,6 +170,15 @@
 				5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */,
 			);
 			name = Load;
+			sourceTree = "<group>";
+		};
+		5271D4FA180F8E8F00ED3C30 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				5271D4FB180F8EA200ED3C30 /* ZJView.h */,
+				5271D4FC180F8EA200ED3C30 /* ZJView.m */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +284,7 @@
 				5271D4D8180F8A3E00ED3C30 /* ZJViewController.m in Sources */,
 				5271D4CF180F8A3E00ED3C30 /* ZJAppDelegate.m in Sources */,
 				5271D4CB180F8A3E00ED3C30 /* main.m in Sources */,
+				5271D4FD180F8EA200ED3C30 /* ZJView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

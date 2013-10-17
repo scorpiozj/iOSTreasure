@@ -9,6 +9,30 @@
 #import "ZJViewController.h"
 #import "ZJPerson.h"
 
+
+@interface ZJPerson (printCategory)
+- (void)printPerson;
+@end
+
+
+@implementation ZJPerson (printCategory)
++ (void)load
+{
+    NSLogCMD;
+}
+
++ (void)initialize
+{
+    NSLogCMD;
+}
+
+- (void)printPerson
+{
+    NSLog(@"person is :%@ %@",self.firstName,self.familyName);
+}
+
+@end
+
 @interface ZJViewController ()
 
 @end
