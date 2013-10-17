@@ -8,9 +8,13 @@
 
 #import "ZJViewController.h"
 #import "MyClass.h"
+#import <objc/runtime.h>
+#import "MyChildClass.h"
+
+
 
 @interface ZJViewController ()
-
+@property (readonly) BOOL extensionBool;
 @end
 
 @implementation ZJViewController
@@ -31,8 +35,33 @@
 //    [test performSelector:@selector(notExistMethod) withObject:nil];
     [test performSelector:@selector(directlyForward:) withObject:@"MyClass"];
 
+    [self testProperty];
+    
+
 }
 
+- (void)testProperty
+{
+    unsigned int propertyCount = 0;
+    objc_property_t *propertyArray = class_copyPropertyList([MyClass class], &propertyCount);
+    NSLog(@"property of MyClass:");
+    for (int i = 0; i < propertyCount; i++)
+    {
+        objc_property_t property = propertyArray[i];
+        fprintf(stdout, "%s : %s\n",property_getName(property),property_getAttributes(property));
+    }
+    
+    propertyCount = 0;
+    propertyArray = class_copyPropertyList([MyChildClass class], &propertyCount);
+    NSLog(@"property of MyChildClass:");
+    for (int i = 0; i < propertyCount; i++)
+    {
+        objc_property_t property = propertyArray[i];
+        fprintf(stdout, "%s : %s\n",property_getName(property),property_getAttributes(property));
+    }
+
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

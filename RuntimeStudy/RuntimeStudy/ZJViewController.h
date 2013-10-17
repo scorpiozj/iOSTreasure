@@ -11,3 +11,6 @@
 @interface ZJViewController : UIViewController
 
 @end
+
+@class MyClass;
+

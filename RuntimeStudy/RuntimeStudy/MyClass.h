@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface MyClass : NSObject
+
+@property NSString *familyName;
+@property long version;
+@property (nonatomic, strong) NSString *lastName;
 - (void)print;
 @end

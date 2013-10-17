@@ -7,7 +7,8 @@
 //
 
 #import "MyClass.h"
-
+#import "InvocationClass.h"
 @interface MyChildClass : MyClass
-
+@property (nonatomic, weak) NSDate *today;
+@property InvocationClass *vocation;
 @end
