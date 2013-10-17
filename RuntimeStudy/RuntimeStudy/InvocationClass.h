@@ -12,4 +12,5 @@
 - (void)invokePrint;
 
 - (void)notExistMethod;
+- (void)directlyForward:(NSString *)from;
 @end

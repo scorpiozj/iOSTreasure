@@ -64,7 +64,7 @@ void dynaminPrintIMP(id self, SEL _cmd)
     {
         NSLog(@"can't forward message");
     }
-
+    
 }
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
@@ -78,5 +78,13 @@ void dynaminPrintIMP(id self, SEL _cmd)
     }
     
 
+}
+- (id)forwardingTargetForSelector:(SEL)aSelector
+{
+    if (aSelector == @selector(directlyForward:))
+    {
+        return invocation;
+    }
+    return [super forwardingTargetForSelector:aSelector];
 }
 @end

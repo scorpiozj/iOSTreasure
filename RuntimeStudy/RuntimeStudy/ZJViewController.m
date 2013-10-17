@@ -28,7 +28,8 @@
      use performSelector to call a notExistMethod as compile will have a check first
      */
 //  [test notExistMethod];
-    [test performSelector:@selector(notExistMethod) withObject:nil];
+//    [test performSelector:@selector(notExistMethod) withObject:nil];
+    [test performSelector:@selector(directlyForward:) withObject:@"MyClass"];
 
 }
 

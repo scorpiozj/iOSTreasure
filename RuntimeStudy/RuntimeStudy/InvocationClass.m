@@ -17,4 +17,8 @@
 {
     [self invokePrint];
 }
+- (void)directlyForward:(NSString *)from
+{
+    NSLog(@"It is directly forward by :%@!",from);
+}
 @end
