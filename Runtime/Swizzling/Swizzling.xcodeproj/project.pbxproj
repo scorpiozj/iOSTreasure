@@ -22,6 +22,7 @@
 		5271D4E3180F8A3F00ED3C30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5271D4C2180F8A3E00ED3C30 /* UIKit.framework */; };
 		5271D4EB180F8A3F00ED3C30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5271D4E9180F8A3F00ED3C30 /* InfoPlist.strings */; };
 		5271D4ED180F8A3F00ED3C30 /* SwizzlingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4EC180F8A3F00ED3C30 /* SwizzlingTests.m */; };
+		5271D4F9180F8CAD00ED3C30 /* ZJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		5271D4E8180F8A3F00ED3C30 /* SwizzlingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwizzlingTests-Info.plist"; sourceTree = "<group>"; };
 		5271D4EA180F8A3F00ED3C30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5271D4EC180F8A3F00ED3C30 /* SwizzlingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwizzlingTests.m; sourceTree = "<group>"; };
+		5271D4F7180F8CAD00ED3C30 /* ZJPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPerson.h; sourceTree = "<group>"; };
+		5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 		5271D4C4180F8A3E00ED3C30 /* Swizzling */ = {
 			isa = PBXGroup;
 			children = (
+				5271D4F6180F8C9100ED3C30 /* Load */,
 				5271D4CD180F8A3E00ED3C30 /* ZJAppDelegate.h */,
 				5271D4CE180F8A3E00ED3C30 /* ZJAppDelegate.m */,
 				5271D4D0180F8A3E00ED3C30 /* Main_iPhone.storyboard */,
@@ -153,6 +157,15 @@
 				5271D4E9180F8A3F00ED3C30 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5271D4F6180F8C9100ED3C30 /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				5271D4F7180F8CAD00ED3C30 /* ZJPerson.h */,
+				5271D4F8180F8CAD00ED3C30 /* ZJPerson.m */,
+			);
+			name = Load;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5271D4F9180F8CAD00ED3C30 /* ZJPerson.m in Sources */,
 				5271D4D8180F8A3E00ED3C30 /* ZJViewController.m in Sources */,
 				5271D4CF180F8A3E00ED3C30 /* ZJAppDelegate.m in Sources */,
 				5271D4CB180F8A3E00ED3C30 /* main.m in Sources */,
