@@ -24,6 +24,7 @@
 		52136A38180E51880001AF25 /* RuntimeStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A37180E51880001AF25 /* RuntimeStudyTests.m */; };
 		52136A43180E52640001AF25 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136A42180E52640001AF25 /* MyClass.m */; };
 		52136AAA180E69BE0001AF25 /* InvocationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 52136AA9180E69BE0001AF25 /* InvocationClass.m */; };
+		5271D4B1180F739D00ED3C30 /* MyChildClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271D4B0180F739D00ED3C30 /* MyChildClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		52136A42180E52640001AF25 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
 		52136AA8180E69BE0001AF25 /* InvocationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvocationClass.h; sourceTree = "<group>"; };
 		52136AA9180E69BE0001AF25 /* InvocationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvocationClass.m; sourceTree = "<group>"; };
+		5271D4AF180F739D00ED3C30 /* MyChildClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyChildClass.h; sourceTree = "<group>"; };
+		5271D4B0180F739D00ED3C30 /* MyChildClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyChildClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				52136A42180E52640001AF25 /* MyClass.m */,
 				52136AA8180E69BE0001AF25 /* InvocationClass.h */,
 				52136AA9180E69BE0001AF25 /* InvocationClass.m */,
+				5271D4AF180F739D00ED3C30 /* MyChildClass.h */,
+				5271D4B0180F739D00ED3C30 /* MyChildClass.m */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				52136A43180E52640001AF25 /* MyClass.m in Sources */,
 				52136AAA180E69BE0001AF25 /* InvocationClass.m in Sources */,
 				52136A23180E51880001AF25 /* ZJViewController.m in Sources */,
+				5271D4B1180F739D00ED3C30 /* MyChildClass.m in Sources */,
 				52136A1A180E51880001AF25 /* ZJAppDelegate.m in Sources */,
 				52136A16180E51880001AF25 /* main.m in Sources */,
 			);
@@ -495,6 +501,7 @@
 				52136A3D180E51880001AF25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52136A3E180E51880001AF25 /* Build configuration list for PBXNativeTarget "RuntimeStudyTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +510,7 @@
 				52136A40180E51880001AF25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
