@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40C494D31812D04E00A21DD3 /* ZJObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C494D21812D04E00A21DD3 /* ZJObject.m */; };
 		5271D4BF180F8A3E00ED3C30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5271D4BE180F8A3E00ED3C30 /* Foundation.framework */; };
 		5271D4C1180F8A3E00ED3C30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5271D4C0180F8A3E00ED3C30 /* CoreGraphics.framework */; };
 		5271D4C3180F8A3E00ED3C30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5271D4C2180F8A3E00ED3C30 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40C494D11812D04E00A21DD3 /* ZJObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJObject.h; sourceTree = "<group>"; };
+		40C494D21812D04E00A21DD3 /* ZJObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJObject.m; sourceTree = "<group>"; };
 		5271D4BB180F8A3E00ED3C30 /* Swizzling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swizzling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5271D4BE180F8A3E00ED3C30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5271D4C0180F8A3E00ED3C30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 			children = (
 				5271D4FB180F8EA200ED3C30 /* ZJView.h */,
 				5271D4FC180F8EA200ED3C30 /* ZJView.m */,
+				40C494D11812D04E00A21DD3 /* ZJObject.h */,
+				40C494D21812D04E00A21DD3 /* ZJObject.m */,
 			);
 			name = Help;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C494D31812D04E00A21DD3 /* ZJObject.m in Sources */,
 				5271D4F9180F8CAD00ED3C30 /* ZJPerson.m in Sources */,
 				5271D4D8180F8A3E00ED3C30 /* ZJViewController.m in Sources */,
 				5271D4CF180F8A3E00ED3C30 /* ZJAppDelegate.m in Sources */,
@@ -503,6 +509,7 @@
 				5271D4F2180F8A3F00ED3C30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5271D4F3180F8A3F00ED3C30 /* Build configuration list for PBXNativeTarget "SwizzlingTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +518,7 @@
 				5271D4F5180F8A3F00ED3C30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

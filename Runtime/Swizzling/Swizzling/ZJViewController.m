@@ -9,7 +9,7 @@
 #import "ZJViewController.h"
 #import "ZJPerson.h"
 #import "ZJView.h"
-
+#import <objc/runtime.h>
 
 @interface ZJPerson (printCategory)
 - (void)printPerson;
@@ -81,6 +81,15 @@
     UIView *normalView = [[UIView alloc] initWithFrame:CGRectMake(150, 0, 100, 100)];
     normalView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:normalView];
+    
+    UIView *testView2 = [[UIView alloc] initWithFrame:CGRectMake(260, 0, 50, 100)];
+    testView2.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:testView2];
+    
+    object_setClass(testView2, NSClassFromString(@"ZJView"));
+    testView2.frame = CGRectMake(260, 0, 50, 100);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

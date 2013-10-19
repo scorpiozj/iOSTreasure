@@ -41,10 +41,7 @@ static void swizzSetFrame(id self, SEL selector, CGRect rect)
     }
     
 }
-- (void)setMyFrame:(CGRect)aFrame
-{
- 
-}
+
 static void mySetFrame(id self, SEL _cmd,CGRect frame)
 {
     NSLog(@"run mySetFrame");
@@ -64,6 +61,8 @@ static void mySetFrame(id self, SEL _cmd,CGRect frame)
     originalIMP = (void *)method_getImplementation(originMethod);
     class_replaceMethod(myClass, originalSel, (IMP)mySetFrame, originType);
     
+    
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.
