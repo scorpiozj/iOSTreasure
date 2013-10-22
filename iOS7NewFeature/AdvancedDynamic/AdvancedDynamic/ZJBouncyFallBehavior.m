@@ -19,6 +19,7 @@
         c.translatesReferenceBoundsIntoBoundary = TRUE;
         [self addChildBehavior:g];
         [self addChildBehavior:c];
+        
     }
     
     return self;

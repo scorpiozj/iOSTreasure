@@ -10,4 +10,6 @@
 
 @interface ZJBouncyFallBehavior : UIDynamicBehavior
 -(instancetype)initWithItems:(NSArray*)items;
+
+
 @end

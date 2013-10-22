@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJPendulumBehavior : UIDynamicBehavior
-
+- (instancetype)initWithWeight:(id<UIDynamicItem>)item AndPoint:(CGPoint)point;
+- (void)beginDragToPoint:(CGPoint)point;
+- (void)dragWeightToPoint:(CGPoint)point;
+- (void)endDragToPoint:(CGPoint)point;
 @end

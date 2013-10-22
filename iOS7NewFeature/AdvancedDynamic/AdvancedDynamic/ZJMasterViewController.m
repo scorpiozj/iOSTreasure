@@ -13,6 +13,7 @@
 #import "ZJCollisionsViewController.h"
 #import "ZJCollectionViewController.h"
 #import "ZJDetailViewController.h"
+#import "ZJPendulumViewController.h"
 
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
@@ -36,7 +37,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (!_objects) {
-        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections",@"Custom Behaviors", nil];
+        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections",@"Bouncy Fall",@"Pendulumn", nil];
         
     }
     
@@ -151,6 +152,13 @@
             ZJDetailViewController *detailVC = [[ZJDetailViewController alloc] initWithNibName:Nil bundle:nil];
             detailVC.title = obj;
             [self.navigationController pushViewController:detailVC animated:YES];
+            break;
+        }
+        case 4:
+        {
+            ZJPendulumViewController *pendulumnVC = [[ZJPendulumViewController alloc] initWithNibName:nil bundle:nil];
+            pendulumnVC.title = obj;
+            [self.navigationController pushViewController:pendulumnVC animated:YES];
             break;
         }
         default:
