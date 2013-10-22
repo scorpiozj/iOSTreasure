@@ -10,6 +10,7 @@
 		5205A26917F0081900778B4B /* ZJDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26817F0081900778B4B /* ZJDynamicsViewController.m */; };
 		5205A26C17F019A500778B4B /* ZJCollisionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */; };
 		5271489718165C7F004EC2F8 /* ZJPendulumBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271489618165C7F004EC2F8 /* ZJPendulumBehavior.m */; };
+		5271489A18165EB2004EC2F8 /* ZJPendulumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271489918165EB2004EC2F8 /* ZJPendulumViewController.m */; };
 		527789A417EFDE0C00C689AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A317EFDE0C00C689AC /* Foundation.framework */; };
 		527789A617EFDE0C00C689AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A517EFDE0C00C689AC /* CoreGraphics.framework */; };
 		527789A817EFDE0C00C689AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527789A717EFDE0C00C689AC /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollisionsViewController.m; sourceTree = "<group>"; };
 		5271489518165C7F004EC2F8 /* ZJPendulumBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPendulumBehavior.h; sourceTree = "<group>"; };
 		5271489618165C7F004EC2F8 /* ZJPendulumBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPendulumBehavior.m; sourceTree = "<group>"; };
+		5271489818165EB2004EC2F8 /* ZJPendulumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPendulumViewController.h; sourceTree = "<group>"; };
+		5271489918165EB2004EC2F8 /* ZJPendulumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPendulumViewController.m; sourceTree = "<group>"; };
 		527789A017EFDE0C00C689AC /* AdvancedDynamic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedDynamic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527789A317EFDE0C00C689AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		527789A517EFDE0C00C689AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				52FDEA8F17F166DA005ADFA3 /* ZJBouncyFallBehavior.m */,
 				5271489518165C7F004EC2F8 /* ZJPendulumBehavior.h */,
 				5271489618165C7F004EC2F8 /* ZJPendulumBehavior.m */,
+				5271489818165EB2004EC2F8 /* ZJPendulumViewController.h */,
+				5271489918165EB2004EC2F8 /* ZJPendulumViewController.m */,
 			);
 			name = CustomBehavior;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 				52DF142D17F1349000FEBB08 /* ZJCollectionViewController.m in Sources */,
 				527789C017EFDE0C00C689AC /* ZJDetailViewController.m in Sources */,
 				52FDEA9017F166DA005ADFA3 /* ZJBouncyFallBehavior.m in Sources */,
+				5271489A18165EB2004EC2F8 /* ZJPendulumViewController.m in Sources */,
 				527789B417EFDE0C00C689AC /* ZJAppDelegate.m in Sources */,
 				5271489718165C7F004EC2F8 /* ZJPendulumBehavior.m in Sources */,
 				527789B017EFDE0C00C689AC /* main.m in Sources */,
