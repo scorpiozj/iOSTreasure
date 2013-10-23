@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ZJASCIIDynamicItem : NSObject<UIDynamicItem>
-@property (nonatomic, readonly) CGRect bounds;
-@property (nonatomic, readwrite) CGPoint center;
-@property (nonatomic, readwrite) CGAffineTransform transform;
+//@property (nonatomic, readonly) CGRect bounds;
+//@property (nonatomic, readwrite) CGPoint center;
+//@property (nonatomic, readwrite) CGAffineTransform transform;
+- (instancetype)initWithTarget:(id<UIDynamicItem>)target;
 @end

@@ -15,6 +15,7 @@
 #import "ZJDetailViewController.h"
 #import "ZJPendulumViewController.h"
 #import "ZJDynamicitemsViewController.h"
+#import "ZJCustomDynamicItemViewController.h"
 
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
@@ -38,7 +39,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     if (!_objects) {
-        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections",@"Bouncy Fall",@"Pendulumn",@"Dynamic Items", nil];
+        _objects = [[NSMutableArray alloc] initWithObjects:@"Spring Attachment",@"Collision Objects",@"Collections",@"Bouncy Fall",@"Pendulumn",@"Dynamic Items",@"Custom Dynamic Items", nil];
         
     }
     
@@ -167,6 +168,13 @@
             ZJDynamicitemsViewController *dynamicItemVC = [[ZJDynamicitemsViewController alloc] initWithNibName:nil bundle:nil];
             dynamicItemVC.title = obj;
             [self.navigationController pushViewController:dynamicItemVC animated:YES];
+            break;
+        }
+        case 6:
+        {
+            ZJCustomDynamicItemViewController *cusDynamicItemVC = [[ZJCustomDynamicItemViewController alloc] initWithNibName:nil bundle:nil];
+            cusDynamicItemVC.title = obj;
+            [self.navigationController pushViewController:cusDynamicItemVC animated:YES];
             break;
         }
         default:
