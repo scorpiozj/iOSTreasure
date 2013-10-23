@@ -189,6 +189,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WPn-Tm-pmr"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ptC-D2-bwd" id="OIB-VK-HZt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcw-4J-pzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

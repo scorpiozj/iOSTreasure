@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+/*
+ 1 prepareLayout
+ 2 collectionViewContentSize
+ 3 layoutAttributesForElementsInRect:
+ */
 @interface ZJCustomLayout : UICollectionViewLayout
 
 @end

@@ -10,7 +10,7 @@
 #import "ZJCell.h"
 #import "ZJSupplementaryView.h"
 
-@interface ZJCollectionsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ZJCollectionsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+//    self.collectionView.contentInset = UIEdgeInsetsMake(1, 10, 20, 10);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,11 +64,13 @@
     {
         supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CLHeader" forIndexPath:indexPath];
         text = [NSString stringWithFormat:@"Header %d",indexPath.section];
+        supplementaryView.backgroundColor = [UIColor darkGrayColor];
     }
     else
     {
         supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CLFooter" forIndexPath:indexPath];;
         text = [NSString stringWithFormat:@"Footer %d",indexPath.section];
+        supplementaryView.backgroundColor = [UIColor lightGrayColor];
     }
 
     supplementaryView.label.text = text;

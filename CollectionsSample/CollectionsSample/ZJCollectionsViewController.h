@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJCollectionsViewController : UIViewController
-
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end
