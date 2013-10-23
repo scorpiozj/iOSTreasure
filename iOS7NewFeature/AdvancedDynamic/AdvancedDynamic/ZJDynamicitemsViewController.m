@@ -45,14 +45,25 @@
     self.greenView = view;
     [self.view addSubview:self.greenView];
     
-    UIDynamicItemBehavior *itemBe = [[UIDynamicItemBehavior alloc] initWithItems:@[self.redView]];
+    
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[self.greenView]];
+    [self.animator addBehavior:gravity];
+    
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[self.greenView]];
+    collision.translatesReferenceBoundsIntoBoundary = YES;
+    [self.animator addBehavior:collision];
+    
+    UIDynamicItemBehavior *itemBe = [[UIDynamicItemBehavior alloc] initWithItems:@[self.redView,self.greenView]];
     self.itemBehavior = itemBe;
     [self.itemBehavior addAngularVelocity:.5 forItem:self.redView];
     
-    [self.itemBehavior addLinearVelocity:CGPointMake(50, 100) forItem:self.greenView];
-    
-    self.itemBehavior.angularResistance = 1;
+    [self.itemBehavior addAngularVelocity:-.8 forItem:self.greenView];
+    self.itemBehavior.elasticity = .3;
     [self.animator addBehavior:self.itemBehavior];
+    
+    
+    
+    
     
     
     
