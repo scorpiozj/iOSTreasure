@@ -10,6 +10,7 @@
 		5205A26917F0081900778B4B /* ZJDynamicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26817F0081900778B4B /* ZJDynamicsViewController.m */; };
 		5205A26C17F019A500778B4B /* ZJCollisionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */; };
 		5211FA521817647300A0292B /* ZJASCIIDynamicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5211FA511817647300A0292B /* ZJASCIIDynamicItem.m */; };
+		5211FA55181767A900A0292B /* ZJCustomDynamicItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5211FA54181767A900A0292B /* ZJCustomDynamicItemViewController.m */; };
 		5271489718165C7F004EC2F8 /* ZJPendulumBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271489618165C7F004EC2F8 /* ZJPendulumBehavior.m */; };
 		5271489A18165EB2004EC2F8 /* ZJPendulumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271489918165EB2004EC2F8 /* ZJPendulumViewController.m */; };
 		5271489D181670F9004EC2F8 /* ZJDynamicitemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5271489C181670F9004EC2F8 /* ZJDynamicitemsViewController.m */; };
@@ -60,6 +61,8 @@
 		5205A26B17F019A500778B4B /* ZJCollisionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollisionsViewController.m; sourceTree = "<group>"; };
 		5211FA501817647300A0292B /* ZJASCIIDynamicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJASCIIDynamicItem.h; sourceTree = "<group>"; };
 		5211FA511817647300A0292B /* ZJASCIIDynamicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJASCIIDynamicItem.m; sourceTree = "<group>"; };
+		5211FA53181767A900A0292B /* ZJCustomDynamicItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomDynamicItemViewController.h; sourceTree = "<group>"; };
+		5211FA54181767A900A0292B /* ZJCustomDynamicItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomDynamicItemViewController.m; sourceTree = "<group>"; };
 		5271489518165C7F004EC2F8 /* ZJPendulumBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPendulumBehavior.h; sourceTree = "<group>"; };
 		5271489618165C7F004EC2F8 /* ZJPendulumBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPendulumBehavior.m; sourceTree = "<group>"; };
 		5271489818165EB2004EC2F8 /* ZJPendulumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPendulumViewController.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				5271489918165EB2004EC2F8 /* ZJPendulumViewController.m */,
 				5271489B181670F9004EC2F8 /* ZJDynamicitemsViewController.h */,
 				5271489C181670F9004EC2F8 /* ZJDynamicitemsViewController.m */,
+				5211FA53181767A900A0292B /* ZJCustomDynamicItemViewController.h */,
+				5211FA54181767A900A0292B /* ZJCustomDynamicItemViewController.m */,
 				527789C117EFDE0C00C689AC /* Images.xcassets */,
 				527789AA17EFDE0C00C689AC /* Supporting Files */,
 			);
@@ -352,6 +357,7 @@
 				52FDEA9317F18A12005ADFA3 /* ZJCollectionsLayout.m in Sources */,
 				5205A26917F0081900778B4B /* ZJDynamicsViewController.m in Sources */,
 				5271489D181670F9004EC2F8 /* ZJDynamicitemsViewController.m in Sources */,
+				5211FA55181767A900A0292B /* ZJCustomDynamicItemViewController.m in Sources */,
 				52DF142D17F1349000FEBB08 /* ZJCollectionViewController.m in Sources */,
 				527789C017EFDE0C00C689AC /* ZJDetailViewController.m in Sources */,
 				52FDEA9017F166DA005ADFA3 /* ZJBouncyFallBehavior.m in Sources */,
