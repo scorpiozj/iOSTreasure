@@ -7,8 +7,10 @@
 //
 
 #import "ZJCollectionsViewController.h"
+#import "ZJCell.h"
+#import "ZJSupplementaryView.h"
 
-@interface ZJCollectionsViewController ()
+@interface ZJCollectionsViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end
 
@@ -35,4 +37,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 2;
+}
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
+{
+    return 20;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZJCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ZJCell" forIndexPath:indexPath];
+    NSString *imgName = [NSString stringWithFormat:@"%d.JPG",indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:imgName];
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    ZJSupplementaryView *supplementaryView = nil;
+    NSString *text = nil;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader])
+    {
+        supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CLHeader" forIndexPath:indexPath];
+        text = [NSString stringWithFormat:@"Header %d",indexPath.section];
+    }
+    else
+    {
+        supplementaryView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CLFooter" forIndexPath:indexPath];;
+        text = [NSString stringWithFormat:@"Footer %d",indexPath.section];
+    }
+
+    supplementaryView.label.text = text;
+    return supplementaryView;
+}
 @end
