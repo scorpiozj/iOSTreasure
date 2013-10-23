@@ -58,6 +58,7 @@
 		525BDD0A1817AD700061D31D /* 7.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 525BDCEA1817AD700061D31D /* 7.JPG */; };
 		525BDD0B1817AD700061D31D /* 8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 525BDCEB1817AD700061D31D /* 8.JPG */; };
 		525BDD0C1817AD700061D31D /* 9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 525BDCEC1817AD700061D31D /* 9.JPG */; };
+		525BDD0F1817C0C30061D31D /* ZJCustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDD0E1817C0C30061D31D /* ZJCustomLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		525BDCEA1817AD700061D31D /* 7.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.JPG; sourceTree = "<group>"; };
 		525BDCEB1817AD700061D31D /* 8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.JPG; sourceTree = "<group>"; };
 		525BDCEC1817AD700061D31D /* 9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.JPG; sourceTree = "<group>"; };
+		525BDD0D1817C0C30061D31D /* ZJCustomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomLayout.h; sourceTree = "<group>"; };
+		525BDD0E1817C0C30061D31D /* ZJCustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				525BDCC71817AAED0061D31D /* ZJCell.m */,
 				525BDCC91817AB8D0061D31D /* ZJSupplementaryView.h */,
 				525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */,
+				525BDD0D1817C0C30061D31D /* ZJCustomLayout.h */,
+				525BDD0E1817C0C30061D31D /* ZJCustomLayout.m */,
 				525BDC8F1817A5D30061D31D /* Supporting Files */,
 			);
 			path = CollectionsSample;
@@ -410,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525BDD0F1817C0C30061D31D /* ZJCustomLayout.m in Sources */,
 				525BDCA21817A5D30061D31D /* ZJMasterViewController.m in Sources */,
 				525BDCA51817A5D30061D31D /* ZJDetailViewController.m in Sources */,
 				525BDCCB1817AB8D0061D31D /* ZJSupplementaryView.m in Sources */,
