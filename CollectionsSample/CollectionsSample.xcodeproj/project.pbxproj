@@ -24,6 +24,8 @@
 		525BDCB81817A5D30061D31D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525BDCB61817A5D30061D31D /* InfoPlist.strings */; };
 		525BDCBA1817A5D30061D31D /* CollectionsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCB91817A5D30061D31D /* CollectionsSampleTests.m */; };
 		525BDCC51817A66D0061D31D /* ZJCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */; };
+		525BDCC81817AAED0061D31D /* ZJCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCC71817AAED0061D31D /* ZJCell.m */; };
+		525BDCCB1817AB8D0061D31D /* ZJSupplementaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		525BDCB91817A5D30061D31D /* CollectionsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionsSampleTests.m; sourceTree = "<group>"; };
 		525BDCC31817A66D0061D31D /* ZJCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollectionsViewController.h; sourceTree = "<group>"; };
 		525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionsViewController.m; sourceTree = "<group>"; };
+		525BDCC61817AAED0061D31D /* ZJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCell.h; sourceTree = "<group>"; };
+		525BDCC71817AAED0061D31D /* ZJCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCell.m; sourceTree = "<group>"; };
+		525BDCC91817AB8D0061D31D /* ZJSupplementaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJSupplementaryView.h; path = ../ZJSupplementaryView.h; sourceTree = "<group>"; };
+		525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJSupplementaryView.m; path = ../ZJSupplementaryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 				525BDC8F1817A5D30061D31D /* Supporting Files */,
 				525BDCC31817A66D0061D31D /* ZJCollectionsViewController.h */,
 				525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */,
+				525BDCC61817AAED0061D31D /* ZJCell.h */,
+				525BDCC71817AAED0061D31D /* ZJCell.m */,
+				525BDCC91817AB8D0061D31D /* ZJSupplementaryView.h */,
+				525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */,
 			);
 			path = CollectionsSample;
 			sourceTree = "<group>";
@@ -266,9 +276,11 @@
 			files = (
 				525BDCA21817A5D30061D31D /* ZJMasterViewController.m in Sources */,
 				525BDCA51817A5D30061D31D /* ZJDetailViewController.m in Sources */,
+				525BDCCB1817AB8D0061D31D /* ZJSupplementaryView.m in Sources */,
 				525BDCC51817A66D0061D31D /* ZJCollectionsViewController.m in Sources */,
 				525BDC991817A5D30061D31D /* ZJAppDelegate.m in Sources */,
 				525BDC951817A5D30061D31D /* main.m in Sources */,
+				525BDCC81817AAED0061D31D /* ZJCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
