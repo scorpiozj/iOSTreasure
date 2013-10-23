@@ -23,6 +23,7 @@
 		525BDCB01817A5D30061D31D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC8C1817A5D30061D31D /* UIKit.framework */; };
 		525BDCB81817A5D30061D31D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525BDCB61817A5D30061D31D /* InfoPlist.strings */; };
 		525BDCBA1817A5D30061D31D /* CollectionsSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCB91817A5D30061D31D /* CollectionsSampleTests.m */; };
+		525BDCC51817A66D0061D31D /* ZJCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		525BDCB51817A5D30061D31D /* CollectionsSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollectionsSampleTests-Info.plist"; sourceTree = "<group>"; };
 		525BDCB71817A5D30061D31D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		525BDCB91817A5D30061D31D /* CollectionsSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionsSampleTests.m; sourceTree = "<group>"; };
+		525BDCC31817A66D0061D31D /* ZJCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollectionsViewController.h; sourceTree = "<group>"; };
+		525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				525BDCA41817A5D30061D31D /* ZJDetailViewController.m */,
 				525BDCA61817A5D30061D31D /* Images.xcassets */,
 				525BDC8F1817A5D30061D31D /* Supporting Files */,
+				525BDCC31817A66D0061D31D /* ZJCollectionsViewController.h */,
+				525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */,
 			);
 			path = CollectionsSample;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			files = (
 				525BDCA21817A5D30061D31D /* ZJMasterViewController.m in Sources */,
 				525BDCA51817A5D30061D31D /* ZJDetailViewController.m in Sources */,
+				525BDCC51817A66D0061D31D /* ZJCollectionsViewController.m in Sources */,
 				525BDC991817A5D30061D31D /* ZJAppDelegate.m in Sources */,
 				525BDC951817A5D30061D31D /* main.m in Sources */,
 			);
