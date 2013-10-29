@@ -176,9 +176,19 @@
                 }
                 attributes.frame = rect;
                 
-                if (previousAttribute.children)
+                if (attributes.children)
                 {
+                    NSUInteger childrenCount = attributes.children.count;
+                    CGFloat baseOffset = rect.origin.x;
                     
+                    for (NSUInteger count = 0; count < childrenCount; count ++)
+                    {
+                        NSIndexPath *childIndexpath = attributes.children[count];;
+                        ZJCollectionViewLayoutAttributes *childAttri = cellInformation[childIndexpath];
+                        CGRect childRect = childAttri.frame;
+                        childRect.origin.x = baseOffset + count *(CELL_WIDTH + CELL_ROW_SPACE);
+                        childAttri.frame = childRect;
+                    }
                 }
                 
             }
