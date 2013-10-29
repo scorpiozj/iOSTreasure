@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522D5926181F5A3900EF56A0 /* ZJCustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */; };
 		525BDC891817A5D30061D31D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC881817A5D30061D31D /* Foundation.framework */; };
 		525BDC8B1817A5D30061D31D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC8A1817A5D30061D31D /* CoreGraphics.framework */; };
 		525BDC8D1817A5D30061D31D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC8C1817A5D30061D31D /* UIKit.framework */; };
@@ -72,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		522D5924181F5A3900EF56A0 /* ZJCustomCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomCollectionViewController.h; sourceTree = "<group>"; };
+		522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCollectionViewController.m; sourceTree = "<group>"; };
 		525BDC851817A5D30061D31D /* CollectionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525BDC881817A5D30061D31D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525BDC8A1817A5D30061D31D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,6 +163,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		522D5922181F59E700EF56A0 /* CollectionHelper */ = {
+			isa = PBXGroup;
+			children = (
+				525BDCC61817AAED0061D31D /* ZJCell.h */,
+				525BDCC71817AAED0061D31D /* ZJCell.m */,
+				525BDCC91817AB8D0061D31D /* ZJSupplementaryView.h */,
+				525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */,
+			);
+			name = CollectionHelper;
+			sourceTree = "<group>";
+		};
+		522D5923181F59FA00EF56A0 /* CustomCollection */ = {
+			isa = PBXGroup;
+			children = (
+				525BDD0D1817C0C30061D31D /* ZJCustomLayout.h */,
+				525BDD0E1817C0C30061D31D /* ZJCustomLayout.m */,
+				522D5924181F5A3900EF56A0 /* ZJCustomCollectionViewController.h */,
+				522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */,
+			);
+			name = CustomCollection;
+			sourceTree = "<group>";
+		};
 		525BDC7C1817A5D30061D31D = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +218,8 @@
 		525BDC8E1817A5D30061D31D /* CollectionsSample */ = {
 			isa = PBXGroup;
 			children = (
+				522D5923181F59FA00EF56A0 /* CustomCollection */,
+				522D5922181F59E700EF56A0 /* CollectionHelper */,
 				525BDC971817A5D30061D31D /* ZJAppDelegate.h */,
 				525BDC981817A5D30061D31D /* ZJAppDelegate.m */,
 				525BDC9A1817A5D30061D31D /* Main_iPhone.storyboard */,
@@ -204,12 +231,6 @@
 				525BDCA61817A5D30061D31D /* Images.xcassets */,
 				525BDCC31817A66D0061D31D /* ZJCollectionsViewController.h */,
 				525BDCC41817A66D0061D31D /* ZJCollectionsViewController.m */,
-				525BDCC61817AAED0061D31D /* ZJCell.h */,
-				525BDCC71817AAED0061D31D /* ZJCell.m */,
-				525BDCC91817AB8D0061D31D /* ZJSupplementaryView.h */,
-				525BDCCA1817AB8D0061D31D /* ZJSupplementaryView.m */,
-				525BDD0D1817C0C30061D31D /* ZJCustomLayout.h */,
-				525BDD0E1817C0C30061D31D /* ZJCustomLayout.m */,
 				525BDC8F1817A5D30061D31D /* Supporting Files */,
 			);
 			path = CollectionsSample;
@@ -421,6 +442,7 @@
 				525BDCCB1817AB8D0061D31D /* ZJSupplementaryView.m in Sources */,
 				525BDCC51817A66D0061D31D /* ZJCollectionsViewController.m in Sources */,
 				525BDC991817A5D30061D31D /* ZJAppDelegate.m in Sources */,
+				522D5926181F5A3900EF56A0 /* ZJCustomCollectionViewController.m in Sources */,
 				525BDC951817A5D30061D31D /* main.m in Sources */,
 				525BDCC81817AAED0061D31D /* ZJCell.m in Sources */,
 			);
@@ -641,6 +663,7 @@
 				525BDCBF1817A5D30061D31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		525BDCC01817A5D30061D31D /* Build configuration list for PBXNativeTarget "CollectionsSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -649,6 +672,7 @@
 				525BDCC21817A5D30061D31D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
