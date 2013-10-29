@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZJCustomCollectionViewController : UICollectionViewController
-
+@interface ZJCustomCollectionViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @end

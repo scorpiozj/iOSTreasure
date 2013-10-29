@@ -11,3 +11,8 @@
 @interface ZJCell : UICollectionViewCell
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 @end
+
+
+@interface ZJClassCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UILabel *textLabel;
+@end

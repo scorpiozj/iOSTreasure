@@ -13,8 +13,10 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         // Initialization code
+        
     }
     return self;
 }
@@ -27,5 +29,22 @@
     // Drawing code
 }
 */
+
+@end
+
+
+@implementation ZJClassCell
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        
+        
+        self.backgroundColor = [UIColor colorWithRed:.1 green:.2 blue:1.0 alpha:.9];
+    }
+    return self;
+}
 
 @end
