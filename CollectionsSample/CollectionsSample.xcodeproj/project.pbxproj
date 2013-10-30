@@ -80,6 +80,7 @@
 		52480833182092AA00B0AA30 /* ZJClassReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJClassReusableView.h; sourceTree = "<group>"; };
 		52480834182092AA00B0AA30 /* ZJClassReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJClassReusableView.m; sourceTree = "<group>"; };
 		524808361820954500B0AA30 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
+		524808381820A6F900B0AA30 /* ZJCustomDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomDefines.h; sourceTree = "<group>"; };
 		525BDC851817A5D30061D31D /* CollectionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525BDC881817A5D30061D31D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525BDC8A1817A5D30061D31D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +189,7 @@
 				522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */,
 				52480833182092AA00B0AA30 /* ZJClassReusableView.h */,
 				52480834182092AA00B0AA30 /* ZJClassReusableView.m */,
+				524808381820A6F900B0AA30 /* ZJCustomDefines.h */,
 			);
 			name = CustomCollection;
 			sourceTree = "<group>";

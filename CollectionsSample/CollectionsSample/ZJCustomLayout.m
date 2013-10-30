@@ -7,6 +7,7 @@
 //
 
 #import "ZJCustomLayout.h"
+#import "ZJCustomDefines.h"
 
 #define INSET_TOP               (5)
 #define INSET_LEFT              (5)
@@ -16,8 +17,11 @@
 
 #define CELL_WIDTH              (100)
 #define CELL_HEIGHT             (50)
-#define CELL_SEC_SPACE          (10)
+#define CELL_SEC_SPACE          (20)
 #define CELL_ROW_SPACE          (10)
+
+
+
 @implementation ZJCollectionViewLayoutAttributes
 
 - (BOOL)isEqual:(id)object
@@ -172,7 +176,13 @@
                 rect.origin.x = previousRect.origin.x + previousRect.size.width + CELL_ROW_SPACE;
                 if (previousAttribute.children)
                 {
-                    rect.origin.x += (CELL_WIDTH + CELL_ROW_SPACE) * (previousAttribute.children.count - 1);
+                    ZJCollectionViewLayoutAttributes *preLastChildAttri  = cellInformation[previousAttribute.children.lastObject];
+                    CGRect preLastChildFrame = preLastChildAttri.frame;
+                    rect.origin.x = preLastChildFrame.origin.x + preLastChildFrame.size.width + CELL_ROW_SPACE;
+                    
+                    
+                    
+//                    rect.origin.x += (CELL_WIDTH + CELL_ROW_SPACE) * (previousAttribute.children.count - 1);
                 }
                 attributes.frame = rect;
                 
@@ -206,6 +216,59 @@
         }
     
     [layoutInformation setObject:cellInformation forKey:@"MyCellKind"];//5
+    
+    
+    //frame for supplement view
+    NSMutableDictionary *suppleDict = [NSMutableDictionary dictionary];
+    for(NSInteger section = 0; section < numSections; section++)
+    {
+        NSInteger numItems = [self.collectionView numberOfItemsInSection:section];
+        for(NSInteger item = 0; item < numItems; item++)
+        {
+            indexPath = [NSIndexPath indexPathForItem:item inSection:section];
+            ZJCollectionSuppleLayoutAttributes *suppleAttri = [ZJCollectionSuppleLayoutAttributes layoutAttributesForSupplementaryViewOfKind:ZJSupplementKindDiagram withIndexPath:indexPath];
+            
+            
+            ZJCollectionViewLayoutAttributes *cellAttribute = cellInformation[indexPath];
+            NSArray *cellChildren = cellAttribute.children;
+            if (cellChildren)
+            {
+                NSUInteger childrenCount = cellChildren.count;
+                //calculate the frame
+                CGRect cellFrame = cellAttribute.frame;
+                CGRect suppleFrame = cellFrame;
+                suppleFrame.origin.y = cellFrame.origin.y + cellFrame.size.height;
+                suppleFrame.size.height = CELL_SEC_SPACE;
+               
+
+                NSMutableArray *mPointArray = [NSMutableArray arrayWithCapacity:childrenCount];
+                for (NSUInteger childNum = 0; childNum < childrenCount; childNum ++)
+                {
+                    NSIndexPath *firstIndexPath = [cellChildren objectAtIndex:childNum];
+                    ZJCollectionViewLayoutAttributes *firstChildAttri = cellInformation[firstIndexPath];
+                    CGRect firstChildFrame = firstChildAttri.frame;
+                    CGPoint firstPoint = CGPointMake(firstChildFrame.origin.x + firstChildFrame.size.width /2, firstChildFrame.origin.y + firstChildFrame.size.height /2);
+                    
+                    [mPointArray addObject:[NSValue valueWithCGPoint:firstPoint]];
+                    
+                    
+                    if (childNum == childrenCount - 1)
+                    {
+                        suppleFrame.size.width = firstChildFrame.origin.x + firstChildFrame.size.width - suppleFrame.origin.x;
+                    }
+                }
+                suppleAttri.frame = suppleFrame;
+                suppleAttri.pointArray = mPointArray;
+                
+                
+                
+                
+            }
+            [suppleDict setObject:suppleAttri forKey:indexPath];
+        }
+    }
+    
+    [layoutInformation setObject:suppleDict forKey:ZJSupplementKindDiagram];
     self.layoutInformation = layoutInformation;
 }
 
@@ -221,6 +284,11 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
+    if ([kind isEqualToString:ZJSupplementKindDiagram])
+    {
+        ZJCollectionSuppleLayoutAttributes *suppleAttri = self.layoutInformation[ZJSupplementKindDiagram][indexPath];
+        return suppleAttri;
+    }
     return nil;
 }
 
@@ -248,4 +316,14 @@
     return myAttributes;
 
 }
+@end
+
+
+@implementation ZJCollectionSuppleLayoutAttributes
++ (instancetype)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind withIndexPath:(NSIndexPath *)indexPath
+{
+    return [super layoutAttributesForSupplementaryViewOfKind:elementKind withIndexPath:indexPath];
+}
+
+
 @end

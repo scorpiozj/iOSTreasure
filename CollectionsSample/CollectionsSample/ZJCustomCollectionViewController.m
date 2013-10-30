@@ -9,6 +9,10 @@
 #import "ZJCustomCollectionViewController.h"
 #import "ZJCustomLayout.h"
 #import "ZJCell.h"
+#import "ZJClassReusableView.h"
+
+
+
 
 @interface ZJCustomCollectionViewController ()<ZJCustomLayoutProtocol,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong) ZJCustomLayout *customLayout;
@@ -39,9 +43,19 @@
     
     
     self.collectionView.backgroundColor = [UIColor redColor];
+    
+    [self.collectionView registerClass:[ZJClassReusableView class]
+            forSupplementaryViewOfKind:ZJSupplementKindDiagram
+                   withReuseIdentifier:@"ZJClassDiagram"];
 
 }
 
+//- (void)awakeFromNib
+//{
+//    [self.collectionView registerClass:[ZJClassReusableView class]
+//            forSupplementaryViewOfKind:ZJSupplementKindDiagram
+//                   withReuseIdentifier:@"ZJClassDiagram"];
+//}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -72,14 +86,16 @@
 }
 - (NSArray *)childrenAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section)
+    NSInteger section = indexPath.section;
+    switch (section)
     {
         case 0:
         {
-            NSMutableArray *mArray = [NSMutableArray arrayWithCapacity:3];
-            for (int i = 0; i < 3; i ++)
+            NSInteger capacuty = 4;
+            NSMutableArray *mArray = [NSMutableArray arrayWithCapacity:capacuty];
+            for (int i = 0; i < capacuty; i ++)
             {
-                [mArray addObject:[NSIndexPath indexPathForRow:i inSection:1]];
+                [mArray addObject:[NSIndexPath indexPathForRow:i inSection:section + 1]];
             }
             return mArray;
             break;
@@ -88,11 +104,11 @@
         {
             if (0 == indexPath.row)
             {
-                return @[[NSIndexPath indexPathForRow:0 inSection:2],[NSIndexPath indexPathForRow:1 inSection:2]];
+                return @[[NSIndexPath indexPathForRow:0 inSection:section + 1],[NSIndexPath indexPathForRow:1 inSection:section + 1]];
             }
-            else if (1 == indexPath.row)
+            else if (2 == indexPath.row)
             {
-                return @[[NSIndexPath indexPathForRow:1 inSection:2]];
+                return @[[NSIndexPath indexPathForRow:2 inSection:section + 1],[NSIndexPath indexPathForRow:3 inSection:section + 1]];
             }
 //            else if (6 == indexPath.row)
 //            {
@@ -101,7 +117,14 @@
 
             break;
         }
-        
+        case 2:
+        {
+            if (0 == indexPath.row)
+            {
+                return @[[NSIndexPath indexPathForRow:0 inSection:section + 1],[NSIndexPath indexPathForRow:1 inSection:section + 1]];
+            }
+            break;
+        }
         default:
             
             break;
@@ -113,7 +136,7 @@
 #pragma mark - UICollectionView
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 3;
+    return 4;
 }
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
@@ -123,11 +146,13 @@
             return 1;
             break;
         case 1:
-            return 3;
+            return 4;
             break;
         case 2:
-            return 2;
+            return 4;
             break;
+        case 3:
+            return 2;
         default:
             break;
     }
@@ -147,5 +172,14 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    ZJClassReusableView *classLine = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ZJClassDiagram" forIndexPath:indexPath];
+    
+    return classLine;
+    
+    return nil;
 }
 @end

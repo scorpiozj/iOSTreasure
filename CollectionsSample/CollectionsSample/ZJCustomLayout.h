@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const ZJSupplementKindDiagram ;
+
 @interface ZJCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
 @property (nonatomic) NSArray *children;
 @end
@@ -31,4 +33,10 @@
 
 
 
+@end
+
+
+
+@interface ZJCollectionSuppleLayoutAttributes : UICollectionViewLayoutAttributes
+@property (nonatomic) NSArray *pointArray;
 @end
