@@ -46,5 +46,16 @@
     }
     return self;
 }
-
+- (void)drawRect:(CGRect)rect
+{
+    self.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.layer.borderWidth = 2;
+    
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowRadius = 3;
+    
+    self.layer.cornerRadius = 4;
+    
+    self.layer.shouldRasterize = YES;
+}
 @end

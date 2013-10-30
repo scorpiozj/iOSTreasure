@@ -151,6 +151,9 @@
         {
             indexPath = [NSIndexPath indexPathForItem:item inSection:section];
             ZJCollectionViewLayoutAttributes *attributes = [self attributesWithChildrenAtIndexPath:indexPath];
+//            attributes.zIndex = -(0 + 1);
+//            attributes.transform = CGAffineTransformMakeRotation(.1);
+//            attributes.transform3D = CATransform3DMakeRotation(.3, 0, 0, 1);
             [cellInformation setObject:attributes forKey:indexPath];
         }
     }
@@ -229,7 +232,7 @@
         {
             indexPath = [NSIndexPath indexPathForItem:item inSection:section];
             ZJCollectionSuppleLayoutAttributes *suppleAttri = [ZJCollectionSuppleLayoutAttributes layoutAttributesForSupplementaryViewOfKind:ZJSupplementKindDiagram withIndexPath:indexPath];
-            
+
             
             ZJCollectionViewLayoutAttributes *cellAttribute = cellInformation[indexPath];
             NSArray *cellChildren = cellAttribute.children;

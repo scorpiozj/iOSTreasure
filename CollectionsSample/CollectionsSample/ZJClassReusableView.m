@@ -81,4 +81,10 @@
 //    }
     self.pointArray = ((ZJCollectionSuppleLayoutAttributes *)layoutAttributes).pointArray;
 }
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+
+}
 @end
