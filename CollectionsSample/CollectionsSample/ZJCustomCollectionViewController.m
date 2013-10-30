@@ -179,9 +179,8 @@
     
     
     ZJClassReusableView *classLine = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ZJClassDiagram" forIndexPath:indexPath];
-    NSLog(@"IndexPath:%@ \n view: %@",indexPath, classLine);
+
     return classLine;
     
-    return nil;
 }
 @end

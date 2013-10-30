@@ -30,7 +30,10 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+
+    [super drawRect:rect];
     // Drawing code
+    
     CGRect frame = self.frame;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
@@ -70,6 +73,12 @@
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
 {
+    [super applyLayoutAttributes:layoutAttributes];
+//    ZJCollectionSuppleLayoutAttributes *suppleAttri = (ZJCollectionSuppleLayoutAttributes *)layoutAttributes;
+//    if (!CGSizeEqualToSize(suppleAttri.frame.size, CGSizeZero))
+//    {
+//        self.hidden = NO;
+//    }
     self.pointArray = ((ZJCollectionSuppleLayoutAttributes *)layoutAttributes).pointArray;
 }
 @end
