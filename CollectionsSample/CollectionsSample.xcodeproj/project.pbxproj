@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		522D5926181F5A3900EF56A0 /* ZJCustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */; };
 		52480835182092AA00B0AA30 /* ZJClassReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52480834182092AA00B0AA30 /* ZJClassReusableView.m */; };
+		524808371820954500B0AA30 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 524808361820954500B0AA30 /* ReadMe.rtf */; };
 		525BDC891817A5D30061D31D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC881817A5D30061D31D /* Foundation.framework */; };
 		525BDC8B1817A5D30061D31D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC8A1817A5D30061D31D /* CoreGraphics.framework */; };
 		525BDC8D1817A5D30061D31D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525BDC8C1817A5D30061D31D /* UIKit.framework */; };
@@ -78,6 +79,7 @@
 		522D5925181F5A3900EF56A0 /* ZJCustomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCollectionViewController.m; sourceTree = "<group>"; };
 		52480833182092AA00B0AA30 /* ZJClassReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJClassReusableView.h; sourceTree = "<group>"; };
 		52480834182092AA00B0AA30 /* ZJClassReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJClassReusableView.m; sourceTree = "<group>"; };
+		524808361820954500B0AA30 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		525BDC851817A5D30061D31D /* CollectionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525BDC881817A5D30061D31D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525BDC8A1817A5D30061D31D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +195,7 @@
 		525BDC7C1817A5D30061D31D = {
 			isa = PBXGroup;
 			children = (
+				524808361820954500B0AA30 /* ReadMe.rtf */,
 				525BDC8E1817A5D30061D31D /* CollectionsSample */,
 				525BDCB31817A5D30061D31D /* CollectionsSampleTests */,
 				525BDC871817A5D30061D31D /* Frameworks */,
@@ -422,6 +425,7 @@
 				525BDCF01817AD700061D31D /* 11.JPG in Resources */,
 				525BDD0C1817AD700061D31D /* 9.JPG in Resources */,
 				525BDCFB1817AD700061D31D /* 21.JPG in Resources */,
+				524808371820954500B0AA30 /* ReadMe.rtf in Resources */,
 				525BDCF81817AD700061D31D /* 19.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
