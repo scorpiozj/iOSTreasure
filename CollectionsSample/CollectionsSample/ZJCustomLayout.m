@@ -42,7 +42,7 @@
     NSInteger numberOfColumn;//here in this Sample Column equals the section
 }
 @property (nonatomic) NSDictionary *layoutInformation;
-@property (nonatomic) NSInteger maxNumRows;
+@property (nonatomic) CGFloat maxWidth;
 @property (nonatomic) UIEdgeInsets insets;
 
 
@@ -76,7 +76,7 @@
 //- (void)adjustFramesOfChildrenAndConnectorsForClassAtIndexPath:(NSIndexPath *)indexPath withCurrentFrame:(CGRect)rect
 //{
 //    ZJCollectionViewLayoutAttributes *attributes = [self attributesWithChildrenAtIndexPath:indexPath];
-//    
+//
 //    if (0 != indexPath.row)
 //    {
 //        NSIndexPath *previousIndexpath = [NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section];
@@ -88,14 +88,14 @@
 //            attributes.frame = rect;
 //        }
 //    }
-//    
-//    
+//
+//
 //    NSArray *children = attributes.children;
 //    if (!children)
 //    {
 //        return;
 //    }
-//    
+//
 //    NSUInteger count = [children count];
 //    for (NSUInteger num = 0; num < count; num ++)
 //    {
@@ -104,9 +104,9 @@
 //        CGRect childRect = childAttribute.frame;
 //        childRect.origin.y = rect.origin.y + (num ) * CELL_HEIGHT;
 //        childAttribute.frame = childRect;
-//        
+//
 //        [self adjustFramesOfChildrenAndConnectorsForClassAtIndexPath:childIndexPath withCurrentFrame:childRect];
-//        
+//
 //    }
 //}
 
@@ -115,7 +115,7 @@
 {
     self.insets = UIEdgeInsetsMake(INSET_TOP, INSET_LEFT, INSET_BOTTOM, INSET_RIGHT);
     
-
+    
 }
 - (instancetype)init
 {
@@ -129,10 +129,10 @@
 - (CGSize)collectionViewContentSize
 {
     
-    CGFloat width = self.collectionView.numberOfSections * (CELL_WIDTH + self.insets.left + self.insets.right);
-    CGFloat height = self.maxNumRows * (CELL_HEIGHT + _insets.top + _insets.bottom);
+    CGFloat width = self.maxWidth + CELL_ROW_SPACE;// self.collectionView.numberOfSections * (CELL_WIDTH )+ self.insets.left + self.insets.right;
+    CGFloat height = self.collectionView.numberOfSections * (CELL_HEIGHT + CELL_SEC_SPACE) + self.insets.top + self.insets.bottom;
     
-    return CGSizeMake(height, width);
+    return CGSizeMake(width, height);
     
     return CGSizeZero;
 }
@@ -165,7 +165,7 @@
             ZJCollectionViewLayoutAttributes *attributes = [cellInformation objectForKey:indexPath];//1
             attributes.frame = [self frameForCellAtIndexPath:indexPath withHeight:totalHeight];
             
-//            [self adjustFramesOfChildrenAndConnectorsForClassAtIndexPath:indexPath withCurrentFrame:attributes.frame];//2
+            //            [self adjustFramesOfChildrenAndConnectorsForClassAtIndexPath:indexPath withCurrentFrame:attributes.frame];//2
             // begin adjust the frame and its children's frame
             if (item)
             {
@@ -182,7 +182,7 @@
                     
                     
                     
-//                    rect.origin.x += (CELL_WIDTH + CELL_ROW_SPACE) * (previousAttribute.children.count - 1);
+                    //                    rect.origin.x += (CELL_WIDTH + CELL_ROW_SPACE) * (previousAttribute.children.count - 1);
                 }
                 attributes.frame = rect;
                 
@@ -203,17 +203,19 @@
                 
             }
             
-            cellInformation[indexPath] = attributes;
-//            totalHeight += [self.customDataSource numRowsForClassAndChildrenAtIndexPath:indexPath];//3
-        }
-                            
-            if(section == 0)
+            
+            CGFloat currentWidth = attributes.frame.origin.x + attributes.frame.size.width;
+            if (self.maxWidth < currentWidth)
             {
-                self.maxNumRows = 15;//4
-                
+                self.maxWidth = currentWidth;
             }
-                            
+            
+            cellInformation[indexPath] = attributes;
+            //            totalHeight += [self.customDataSource numRowsForClassAndChildrenAtIndexPath:indexPath];//3
         }
+        
+        
+    }
     
     [layoutInformation setObject:cellInformation forKey:@"MyCellKind"];//5
     
@@ -239,8 +241,8 @@
                 CGRect suppleFrame = cellFrame;
                 suppleFrame.origin.y = cellFrame.origin.y + cellFrame.size.height;
                 suppleFrame.size.height = CELL_SEC_SPACE;
-               
-
+                
+                
                 NSMutableArray *mPointArray = [NSMutableArray arrayWithCapacity:childrenCount];
                 for (NSUInteger childNum = 0; childNum < childrenCount; childNum ++)
                 {
@@ -279,7 +281,7 @@
     
     ZJCollectionViewLayoutAttributes *attribute = self.layoutInformation[@"MyCellKind"][indexPath];
     return attribute;
-
+    
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -314,7 +316,7 @@
     }
     
     return myAttributes;
-
+    
 }
 @end
 
