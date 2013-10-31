@@ -108,7 +108,11 @@
             }
             else if (2 == indexPath.row)
             {
-                return @[[NSIndexPath indexPathForRow:2 inSection:section + 1],[NSIndexPath indexPathForRow:3 inSection:section + 1]];
+                return @[[NSIndexPath indexPathForRow:2 inSection:section + 1]];
+            }
+            else if (3 == indexPath.row)
+            {
+                return @[[NSIndexPath indexPathForRow:3 inSection:section + 1]];
             }
 //            else if (6 == indexPath.row)
 //            {

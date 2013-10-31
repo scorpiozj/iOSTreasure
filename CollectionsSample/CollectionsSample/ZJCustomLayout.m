@@ -17,7 +17,7 @@
 
 #define CELL_WIDTH              (100)
 #define CELL_HEIGHT             (50)
-#define CELL_SEC_SPACE          (20)
+#define CELL_SEC_SPACE          (40)
 #define CELL_ROW_SPACE          (10)
 
 
@@ -33,6 +33,29 @@
     }
     return NO;
 }
+- (CGRect)bounds
+{
+    return [super bounds];
+}
+- (CGPoint)center
+{
+    return [super center];
+}
+
+- (void)setCenter:(CGPoint)center
+{
+    [super setCenter:center];
+}
+
+- (CGAffineTransform)transform
+{
+    return [super transform];
+}
+
+- (void)setTransform:(CGAffineTransform)transform
+{
+    [super setTransform:transform];
+}
 
 @end
 
@@ -45,6 +68,7 @@
 @property (nonatomic) CGFloat maxWidth;
 @property (nonatomic) UIEdgeInsets insets;
 
+@property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
 
 @end
 
@@ -116,6 +140,7 @@
     self.insets = UIEdgeInsetsMake(INSET_TOP, INSET_LEFT, INSET_BOTTOM, INSET_RIGHT);
     
     
+    
 }
 - (instancetype)init
 {
@@ -138,6 +163,16 @@
 }
 - (void)prepareLayout
 {
+    if (!self.dynamicAnimator)
+    {
+        UIDynamicAnimator *dynamic = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
+        self.dynamicAnimator = dynamic;
+    }
+    
+    if (self.layoutInformation)
+    {
+        return;
+    }
     //whole size preparation
     NSMutableDictionary *layoutInformation = [NSMutableDictionary dictionary];
     NSMutableDictionary *cellInformation = [NSMutableDictionary dictionary];
@@ -155,6 +190,7 @@
 //            attributes.transform = CGAffineTransformMakeRotation(.1);
 //            attributes.transform3D = CATransform3DMakeRotation(.3, 0, 0, 1);
             [cellInformation setObject:attributes forKey:indexPath];
+            
         }
     }
     
@@ -182,9 +218,6 @@
                     ZJCollectionViewLayoutAttributes *preLastChildAttri  = cellInformation[previousAttribute.children.lastObject];
                     CGRect preLastChildFrame = preLastChildAttri.frame;
                     rect.origin.x = preLastChildFrame.origin.x + preLastChildFrame.size.width + CELL_ROW_SPACE;
-                    
-                    
-                    
                     //                    rect.origin.x += (CELL_WIDTH + CELL_ROW_SPACE) * (previousAttribute.children.count - 1);
                 }
                 attributes.frame = rect;
@@ -205,8 +238,6 @@
                 }
                 
             }
-            
-            
             CGFloat currentWidth = attributes.frame.origin.x + attributes.frame.size.width;
             if (self.maxWidth < currentWidth)
             {
@@ -215,13 +246,32 @@
             
             cellInformation[indexPath] = attributes;
             //            totalHeight += [self.customDataSource numRowsForClassAndChildrenAtIndexPath:indexPath];//3
+            
+            
+            
         }
         
-        
     }
-    
+
     [layoutInformation setObject:cellInformation forKey:@"MyCellKind"];//5
     
+    if (self.dynamicAnimator.behaviors.count == 0)
+    {
+        NSArray *attributeArray = [cellInformation allValues];
+        [attributeArray enumerateObjectsUsingBlock:^(ZJCollectionViewLayoutAttributes *obj, NSUInteger idx, BOOL *stop) {
+            if (!CGRectEqualToRect(CGRectZero, [obj bounds]))
+            {
+                UIAttachmentBehavior *attachBehavior = [[UIAttachmentBehavior alloc] initWithItem:obj attachedToAnchor:[obj center]];
+                
+                attachBehavior.length = .0f;
+                attachBehavior.damping = .8f;
+                attachBehavior.frequency = 1.0f;
+                
+                [self.dynamicAnimator addBehavior:attachBehavior];
+            }
+            
+        }];
+    }
     
     //frame for supplement view
     NSMutableDictionary *suppleDict = [NSMutableDictionary dictionary];
@@ -281,6 +331,9 @@
 //basically size,position
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+//    ZJCollectionViewLayoutAttributes *attri = (ZJCollectionViewLayoutAttributes *)[self.dynamicAnimator layoutAttributesForCellAtIndexPath:indexPath];
+//    return attri;;
+    
     
     ZJCollectionViewLayoutAttributes *attribute = self.layoutInformation[@"MyCellKind"][indexPath];
     return attribute;
@@ -304,23 +357,87 @@
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
+    NSArray *array = [self.dynamicAnimator itemsInRect:rect];
+//    return array;
+    
     NSMutableArray *myAttributes = [NSMutableArray arrayWithCapacity:self.layoutInformation.count];
     for (NSString *key  in self.layoutInformation)
     {
+        if ([key isEqualToString:@"MyCellKind"])
+        {
+            continue;
+        }
         NSDictionary *attributesDict = [self.layoutInformation objectForKey:key];
         for (NSIndexPath *indexPath  in attributesDict)
         {
             ZJCollectionViewLayoutAttributes *attributes = [attributesDict objectForKey:indexPath];
             if (CGRectIntersectsRect(rect, attributes.frame))
             {
-                [myAttributes addObject:attributes];
+                if ([array indexOfObject:attributes] != NSNotFound)
+                {
+                    
+                }
+                else
+                {
+                    [myAttributes addObject:attributes];
+                }
+                
             }
         }
     }
-    
+    [myAttributes addObjectsFromArray:array];
     return myAttributes;
     
 }
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+
+    UIScrollView *scrollView = self.collectionView;
+    CGFloat delta = newBounds.origin.y - scrollView.bounds.origin.y;
+    
+    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
+    
+    CGPoint velocity = [self.collectionView.panGestureRecognizer velocityInView:self.collectionView];
+//    delta = [self.collectionView.panGestureRecognizer velocityInView:self.collectionView].x/100;
+    [self.dynamicAnimator.behaviors enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger idx, BOOL *stop) {
+        CGFloat yDistanceFromTouch = fabsf(touchLocation.y - springBehaviour.anchorPoint.y);
+        CGFloat xDistanceFromTouch = fabsf(touchLocation.x - springBehaviour.anchorPoint.x);
+        CGFloat scrollResistance = (yDistanceFromTouch + xDistanceFromTouch) / 1500.0f;
+        
+        UICollectionViewLayoutAttributes *item = springBehaviour.items.firstObject;
+        CGPoint center = item.center;
+        CGFloat xoffset = velocity.x / 10.0;
+        if (fabsf(xoffset) < 10)
+        {
+            xoffset = 10;
+        }
+        else if (fabsf(xoffset)> 20)
+        {
+            xoffset = 20;
+        }
+        
+        center.x += -(xoffset);
+        
+        NSLog(@"velocity is :%@\n offset is :%f",NSStringFromCGPoint(velocity),xoffset);
+//        if (delta < 0) {
+//            center.x += MAX(delta, delta*scrollResistance);
+//            center.x -= 10;
+//        }
+//        else {
+//            center.x += MIN(delta, delta*scrollResistance);
+//            center.x += 10;
+//        }
+
+        item.center = center;
+        
+        [self.dynamicAnimator updateItemUsingCurrentState:item];
+    }];
+    
+    return NO;
+}
+
+
 @end
 
 

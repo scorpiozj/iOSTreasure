@@ -10,8 +10,11 @@
 
 extern NSString *const ZJSupplementKindDiagram ;
 
-@interface ZJCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
+@interface ZJCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes<UIDynamicItem>
 @property (nonatomic) NSArray *children;
+
+
+
 @end
 
 /*
