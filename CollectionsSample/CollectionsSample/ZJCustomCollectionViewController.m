@@ -91,7 +91,7 @@
     {
         case 0:
         {
-            NSInteger capacuty = 4;
+            NSInteger capacuty = 3;
             NSMutableArray *mArray = [NSMutableArray arrayWithCapacity:capacuty];
             for (int i = 0; i < capacuty; i ++)
             {
@@ -102,7 +102,7 @@
         }
         case 1:
         {
-            if (0 == indexPath.row)
+            if (1 == indexPath.row)
             {
                 return @[[NSIndexPath indexPathForRow:0 inSection:section + 1],[NSIndexPath indexPathForRow:1 inSection:section + 1]];
             }
@@ -110,10 +110,10 @@
             {
                 return @[[NSIndexPath indexPathForRow:2 inSection:section + 1]];
             }
-            else if (3 == indexPath.row)
-            {
-                return @[[NSIndexPath indexPathForRow:3 inSection:section + 1]];
-            }
+//            else if (3 == indexPath.row)
+//            {
+//                return @[[NSIndexPath indexPathForRow:3 inSection:section + 1]];
+//            }
 //            else if (6 == indexPath.row)
 //            {
 //                return @[[NSIndexPath indexPathForRow:1 inSection:2],[NSIndexPath indexPathForRow:2 inSection:2]];
@@ -121,14 +121,14 @@
 
             break;
         }
-        case 2:
-        {
-            if (0 == indexPath.row)
-            {
-                return @[[NSIndexPath indexPathForRow:0 inSection:section + 1],[NSIndexPath indexPathForRow:1 inSection:section + 1]];
-            }
-            break;
-        }
+//        case 2:
+//        {
+//            if (0 == indexPath.row)
+//            {
+//                return @[[NSIndexPath indexPathForRow:0 inSection:section + 1],[NSIndexPath indexPathForRow:1 inSection:section + 1]];
+//            }
+//            break;
+//        }
         default:
             
             break;
@@ -140,7 +140,7 @@
 #pragma mark - UICollectionView
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 4;
+    return 3;
 }
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
@@ -150,10 +150,10 @@
             return 1;
             break;
         case 1:
-            return 4;
+            return 3;
             break;
         case 2:
-            return 4;
+            return 3;
             break;
         case 3:
             return 2;

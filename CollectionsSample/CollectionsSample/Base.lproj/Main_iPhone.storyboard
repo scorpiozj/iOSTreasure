@@ -221,6 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcw-4J-pzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1250" y="64"/>
         </scene>
         <!--ZJCustomCollections View Controller-->
         <scene sceneID="kC2-qb-Yx8">

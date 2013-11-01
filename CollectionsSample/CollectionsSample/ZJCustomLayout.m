@@ -204,7 +204,6 @@
             ZJCollectionViewLayoutAttributes *attributes = [cellInformation objectForKey:indexPath];//1
             attributes.frame = [self frameForCellAtIndexPath:indexPath withHeight:totalHeight];
             
-            //            [self adjustFramesOfChildrenAndConnectorsForClassAtIndexPath:indexPath withCurrentFrame:attributes.frame];//2
             // begin adjust the frame and its children's frame
             if (item)
             {
