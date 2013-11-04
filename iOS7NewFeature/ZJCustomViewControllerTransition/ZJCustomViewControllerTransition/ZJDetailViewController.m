@@ -7,6 +7,7 @@
 //
 
 #import "ZJDetailViewController.h"
+#import "ZJToViewController.h"
 
 @interface ZJDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -52,7 +53,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark -
+- (IBAction)presentAction:(id)sender
+{
+    ZJToViewController *toVC = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
+    
+    toVC.transitioningDelegate = toVC;
+    toVC.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:toVC animated:YES completion:^{
+        
+    }];
+}
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
@@ -68,5 +80,6 @@
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
+
 
 @end
