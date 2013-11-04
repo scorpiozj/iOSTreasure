@@ -23,6 +23,7 @@
 		524C01831827429D007E1911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524C015F1827429D007E1911 /* UIKit.framework */; };
 		524C018B1827429D007E1911 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 524C01891827429D007E1911 /* InfoPlist.strings */; };
 		524C018D1827429D007E1911 /* ZJCustomViewControllerTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C018C1827429D007E1911 /* ZJCustomViewControllerTransitionTests.m */; };
+		524C0198182788C5007E1911 /* ZJToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C0197182788C5007E1911 /* ZJToViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		524C01881827429D007E1911 /* ZJCustomViewControllerTransitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZJCustomViewControllerTransitionTests-Info.plist"; sourceTree = "<group>"; };
 		524C018A1827429D007E1911 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		524C018C1827429D007E1911 /* ZJCustomViewControllerTransitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJCustomViewControllerTransitionTests.m; sourceTree = "<group>"; };
+		524C0196182788C5007E1911 /* ZJToViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJToViewController.h; path = ZJClass/ZJToViewController.h; sourceTree = "<group>"; };
+		524C0197182788C5007E1911 /* ZJToViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJToViewController.m; path = ZJClass/ZJToViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		524C01611827429D007E1911 /* ZJCustomViewControllerTransition */ = {
 			isa = PBXGroup;
 			children = (
+				524C019918278941007E1911 /* ZJClass */,
 				524C016A1827429D007E1911 /* ZJAppDelegate.h */,
 				524C016B1827429D007E1911 /* ZJAppDelegate.m */,
 				524C016D1827429D007E1911 /* Main_iPhone.storyboard */,
@@ -158,6 +162,15 @@
 				524C01891827429D007E1911 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		524C019918278941007E1911 /* ZJClass */ = {
+			isa = PBXGroup;
+			children = (
+				524C0196182788C5007E1911 /* ZJToViewController.h */,
+				524C0197182788C5007E1911 /* ZJToViewController.m */,
+			);
+			name = ZJClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +274,7 @@
 			files = (
 				524C01751827429D007E1911 /* ZJMasterViewController.m in Sources */,
 				524C01781827429D007E1911 /* ZJDetailViewController.m in Sources */,
+				524C0198182788C5007E1911 /* ZJToViewController.m in Sources */,
 				524C016C1827429D007E1911 /* ZJAppDelegate.m in Sources */,
 				524C01681827429D007E1911 /* main.m in Sources */,
 			);
