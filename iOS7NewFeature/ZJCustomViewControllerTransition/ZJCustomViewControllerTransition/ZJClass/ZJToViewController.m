@@ -28,7 +28,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(50, 100, 80, 40);
+    [btn setTitle:@"Dismiss" forState:UIControlStateNormal];
+
+    [btn addTarget:self action:@selector(dismissSelf:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
 }
 
@@ -37,6 +42,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Private
+- (void)dismissSelf:(id)sender
+{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source;
 {
@@ -64,19 +80,32 @@
 #pragma mark -
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext;
 {
-    return 2;
+    return 1;
 }
 // This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext;
 {
     ZJToViewController *toViewController = (ZJToViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containView = [transitionContext containerView];
+    [containView addSubview:toViewController.view];
     
-    [UIView animateWithDuration:2 delay:1 usingSpringWithDamping:.5 initialSpringVelocity:.1 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-        [containView addSubview:toViewController.view];
-        toViewController.view.frame = CGRectMake(0, 0, 320, 480);//for test
+    
+    
+    CGRect rect = toViewController.view.frame;
+    rect.origin.x = -320;
+    rect.origin.y = -rect.size.height;
+    toViewController.view.frame = rect;
+    [UIView animateKeyframesWithDuration:1.5 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+        CGRect frame = rect;
+        frame.origin.x = 0;
+        frame.origin.y = 0;
+        toViewController.view.frame = frame;
     } completion:^(BOOL finished) {
+
+
         
+        [transitionContext completeTransition:YES];
     }];
+    
 }
 @end

@@ -61,9 +61,7 @@
     toVC.transitioningDelegate = toVC;
     toVC.modalPresentationStyle = UIModalPresentationCustom;
     
-    [self presentViewController:toVC animated:YES completion:^{
-        
-    }];
+    [self presentViewController:toVC animated:YES completion:nil];
 }
 #pragma mark - Split view
 
