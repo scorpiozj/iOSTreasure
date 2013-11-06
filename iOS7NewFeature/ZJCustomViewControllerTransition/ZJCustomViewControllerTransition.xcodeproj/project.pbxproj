@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		520DE4E7182A1583003A6E42 /* ZJTransitionDelegateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */; };
+		520DE4EA182A42BA003A6E42 /* ZJSliderTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 520DE4E9182A42BA003A6E42 /* ZJSliderTransition.m */; };
 		524C015C1827429D007E1911 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524C015B1827429D007E1911 /* Foundation.framework */; };
 		524C015E1827429D007E1911 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524C015D1827429D007E1911 /* CoreGraphics.framework */; };
 		524C01601827429D007E1911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524C015F1827429D007E1911 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		520DE4E5182A1583003A6E42 /* ZJTransitionDelegateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJTransitionDelegateObj.h; path = ZJClass/ZJTransitionDelegateObj.h; sourceTree = "<group>"; };
 		520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJTransitionDelegateObj.m; path = ZJClass/ZJTransitionDelegateObj.m; sourceTree = "<group>"; };
+		520DE4E8182A42BA003A6E42 /* ZJSliderTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJSliderTransition.h; path = ZJClass/ZJSliderTransition.h; sourceTree = "<group>"; };
+		520DE4E9182A42BA003A6E42 /* ZJSliderTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJSliderTransition.m; path = ZJClass/ZJSliderTransition.m; sourceTree = "<group>"; };
 		524C01581827429D007E1911 /* ZJCustomViewControllerTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJCustomViewControllerTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524C015B1827429D007E1911 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		524C015D1827429D007E1911 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 				524C0197182788C5007E1911 /* ZJToViewController.m */,
 				520DE4E5182A1583003A6E42 /* ZJTransitionDelegateObj.h */,
 				520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */,
+				520DE4E8182A42BA003A6E42 /* ZJSliderTransition.h */,
+				520DE4E9182A42BA003A6E42 /* ZJSliderTransition.m */,
 			);
 			name = ZJClass;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				524C01781827429D007E1911 /* ZJDetailViewController.m in Sources */,
 				524C0198182788C5007E1911 /* ZJToViewController.m in Sources */,
 				524C016C1827429D007E1911 /* ZJAppDelegate.m in Sources */,
+				520DE4EA182A42BA003A6E42 /* ZJSliderTransition.m in Sources */,
 				524C01681827429D007E1911 /* main.m in Sources */,
 				520DE4E7182A1583003A6E42 /* ZJTransitionDelegateObj.m in Sources */,
 			);
