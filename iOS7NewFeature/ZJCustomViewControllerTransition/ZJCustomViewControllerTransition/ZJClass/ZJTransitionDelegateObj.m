@@ -100,4 +100,21 @@
 {
     
 }
+
+
+#pragma mark - UIViewControllerInteractiveTransitioning
+- (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext;
+{
+    
+}
+
+
+- (CGFloat)completionSpeed;
+{
+    return 1.0;
+}
+- (UIViewAnimationCurve)completionCurve;
+{
+    return UIViewAnimationCurveLinear;
+}
 @end

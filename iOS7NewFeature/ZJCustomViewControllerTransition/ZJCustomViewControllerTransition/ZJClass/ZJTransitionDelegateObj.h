@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZJTransitionDelegateObj : NSObject<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
+@class  UIPercentDrivenInteractiveTransition;
+@interface ZJTransitionDelegateObj : NSObject<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning,UIViewControllerInteractiveTransitioning>
 
 @end

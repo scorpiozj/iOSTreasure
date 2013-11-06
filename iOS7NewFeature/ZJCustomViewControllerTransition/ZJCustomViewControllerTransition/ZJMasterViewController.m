@@ -10,9 +10,13 @@
 
 #import "ZJDetailViewController.h"
 
+#import "ZJToViewController.h"
+#import "ZJTransitionDelegateObj.h"
+
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
 }
+@property (nonatomic, strong) ZJTransitionDelegateObj *transitionObj;
 @end
 
 @implementation ZJMasterViewController
@@ -36,6 +40,8 @@
 //    self.navigationItem.rightBarButtonItem = addButton;
 //    self.detailViewController = (ZJDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    ZJTransitionDelegateObj *transition = [[ZJTransitionDelegateObj alloc] init];
+    self.transitionObj = transition;
 
 }
 
@@ -114,6 +120,15 @@
         NSDate *object = _objects[indexPath.row];
         self.detailViewController.detailItem = object;
     }
+    
+    
+    if (indexPath.row == 1)
+    {
+        ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
+//        toViewController.transitioningDelegate = self.transitionObj;;
+        self.navigationController.delegate = self;
+        [self.navigationController pushViewController:toViewController animated:YES];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -124,5 +139,9 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
-
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    return [[ZJTransitionDelegateObj alloc] init];
+    return self.transitionObj;
+}
 @end

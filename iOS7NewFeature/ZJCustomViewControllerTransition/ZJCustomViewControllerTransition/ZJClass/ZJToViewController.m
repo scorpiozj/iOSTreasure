@@ -8,7 +8,7 @@
 
 #import "ZJToViewController.h"
 
-@interface ZJToViewController ()<UIViewControllerAnimatedTransitioning,UIViewControllerTransitioningDelegate>
+@interface ZJToViewController ()
 
 @end
 
