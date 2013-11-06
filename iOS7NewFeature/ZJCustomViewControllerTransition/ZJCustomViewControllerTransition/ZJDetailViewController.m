@@ -8,9 +8,10 @@
 
 #import "ZJDetailViewController.h"
 #import "ZJToViewController.h"
-
+#import "ZJTransitionDelegateObj.h"
 @interface ZJDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) ZJTransitionDelegateObj *transitionObj;
 - (void)configureView;
 @end
 
@@ -46,6 +47,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    ZJTransitionDelegateObj *transion = [[ZJTransitionDelegateObj alloc] init];
+    self.transitionObj = transion;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +62,7 @@
 {
     ZJToViewController *toVC = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
     
-    toVC.transitioningDelegate = toVC;
+    toVC.transitioningDelegate = self.transitionObj;
     toVC.modalPresentationStyle = UIModalPresentationCustom;
     
     [self presentViewController:toVC animated:YES completion:nil];

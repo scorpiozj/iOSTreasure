@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZJTransitionDelegateObj : NSObject<UIViewControllerTransitioningDelegate>
+@interface ZJTransitionDelegateObj : NSObject<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
 
 @end
