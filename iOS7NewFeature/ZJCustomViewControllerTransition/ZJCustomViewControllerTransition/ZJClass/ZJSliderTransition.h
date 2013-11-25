@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJSliderTransition : UIPercentDrivenInteractiveTransition
+- (instancetype)initWithNavigationController:(UINavigationController *)nc;
+
+@property(nonatomic,assign) UINavigationController *parent;
+@property(nonatomic,assign,getter = isInteractive) BOOL interactive;
 
 @end

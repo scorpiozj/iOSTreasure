@@ -7,13 +7,16 @@
 //
 
 #import "ZJMasterViewController.h"
-
 #import "ZJDetailViewController.h"
 
 #import "ZJToViewController.h"
+
 #import "ZJTransitionDelegateObj.h"
 
-@interface ZJMasterViewController () {
+#import "ZJSliderTransition.h"
+#import "ZJSliderTransitionDelegateObj.h"
+@interface ZJMasterViewController () <UINavigationControllerDelegate>
+{
     NSMutableArray *_objects;
 }
 @property (nonatomic, strong) ZJTransitionDelegateObj *transitionObj;
@@ -129,6 +132,12 @@
         self.navigationController.delegate = self;
         [self.navigationController pushViewController:toViewController animated:YES];
     }
+    else if (indexPath.row == 2)
+    {
+        ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
+        self.navigationController.delegate = self;
+        [self.navigationController pushViewController:toViewController animated:YES];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -141,7 +150,30 @@
 }
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
-    return [[ZJTransitionDelegateObj alloc] init];
-    return self.transitionObj;
+    NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
+    if (selectedIndexpath.row == 1)
+    {
+        return [[ZJTransitionDelegateObj alloc] init];
+    }
+    else if (selectedIndexpath.row == 2)
+    {
+        return [[ZJSliderTransitionDelegateObj alloc] init];
+    }
+    return nil;
+    
+//    return self.transitionObj;
+}
+
+- (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                          interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
+{
+    
+    NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
+//    if (selectedIndexpath.row == 2)
+//    {
+//        return [[ZJSliderTransition alloc] init];
+//    }
+
+    return nil;
 }
 @end
