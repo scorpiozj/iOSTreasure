@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401F6D2F184382A600356317 /* ZJSliderTransitionDelegateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 401F6D2E184382A600356317 /* ZJSliderTransitionDelegateObj.m */; };
 		520DE4E7182A1583003A6E42 /* ZJTransitionDelegateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */; };
 		520DE4EA182A42BA003A6E42 /* ZJSliderTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 520DE4E9182A42BA003A6E42 /* ZJSliderTransition.m */; };
 		524C015C1827429D007E1911 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524C015B1827429D007E1911 /* Foundation.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401F6D2D184382A600356317 /* ZJSliderTransitionDelegateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJSliderTransitionDelegateObj.h; path = ZJClass/ZJSliderTransitionDelegateObj.h; sourceTree = "<group>"; };
+		401F6D2E184382A600356317 /* ZJSliderTransitionDelegateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJSliderTransitionDelegateObj.m; path = ZJClass/ZJSliderTransitionDelegateObj.m; sourceTree = "<group>"; };
 		520DE4E5182A1583003A6E42 /* ZJTransitionDelegateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJTransitionDelegateObj.h; path = ZJClass/ZJTransitionDelegateObj.h; sourceTree = "<group>"; };
 		520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJTransitionDelegateObj.m; path = ZJClass/ZJTransitionDelegateObj.m; sourceTree = "<group>"; };
 		520DE4E8182A42BA003A6E42 /* ZJSliderTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJSliderTransition.h; path = ZJClass/ZJSliderTransition.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				520DE4E6182A1583003A6E42 /* ZJTransitionDelegateObj.m */,
 				520DE4E8182A42BA003A6E42 /* ZJSliderTransition.h */,
 				520DE4E9182A42BA003A6E42 /* ZJSliderTransition.m */,
+				401F6D2D184382A600356317 /* ZJSliderTransitionDelegateObj.h */,
+				401F6D2E184382A600356317 /* ZJSliderTransitionDelegateObj.m */,
 			);
 			name = ZJClass;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			files = (
 				524C01751827429D007E1911 /* ZJMasterViewController.m in Sources */,
 				524C01781827429D007E1911 /* ZJDetailViewController.m in Sources */,
+				401F6D2F184382A600356317 /* ZJSliderTransitionDelegateObj.m in Sources */,
 				524C0198182788C5007E1911 /* ZJToViewController.m in Sources */,
 				524C016C1827429D007E1911 /* ZJAppDelegate.m in Sources */,
 				520DE4EA182A42BA003A6E42 /* ZJSliderTransition.m in Sources */,
