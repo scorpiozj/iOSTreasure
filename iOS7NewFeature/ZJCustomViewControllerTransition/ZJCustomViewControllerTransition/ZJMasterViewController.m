@@ -157,7 +157,11 @@
     }
     else if (selectedIndexpath.row == 2)
     {
-        return [[ZJSliderTransitionDelegateObj alloc] init];
+        if (UINavigationControllerOperationPop == operation)
+        {
+            return [[ZJSliderTransitionDelegateObj alloc] init];
+        }
+        
     }
     return nil;
     
@@ -169,10 +173,10 @@
 {
     
     NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
-//    if (selectedIndexpath.row == 2)
-//    {
-//        return [[ZJSliderTransition alloc] init];
-//    }
+    if (selectedIndexpath.row == 2)
+    {
+        return [[ZJSliderTransition alloc] init];
+    }
 
     return nil;
 }
