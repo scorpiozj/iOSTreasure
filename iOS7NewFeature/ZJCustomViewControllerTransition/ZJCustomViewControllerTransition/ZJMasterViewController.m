@@ -20,6 +20,7 @@
     NSMutableArray *_objects;
 }
 @property (nonatomic, strong) ZJTransitionDelegateObj *transitionObj;
+@property (nonatomic, strong) ZJSliderTransition *slideTransition;
 @end
 
 @implementation ZJMasterViewController
@@ -137,6 +138,8 @@
         ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
         self.navigationController.delegate = self;
         [self.navigationController pushViewController:toViewController animated:YES];
+        
+        self.slideTransition = [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];
     }
 }
 
@@ -175,7 +178,8 @@
     NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
     if (selectedIndexpath.row == 2)
     {
-        return [[ZJSliderTransition alloc] init];
+        return self.slideTransition;
+//        return [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];
     }
 
     return nil;

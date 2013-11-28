@@ -22,6 +22,11 @@
     if (self = [super init])
     {
         self.parent = nc;
+        
+        
+        UIPinchGestureRecognizer *pintchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+        
+        [self.parent.view addGestureRecognizer:pintchGesture];
     }
     return self;
 }
