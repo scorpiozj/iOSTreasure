@@ -10,31 +10,13 @@
 
 
 
-@interface ZJSliderTransitionDelegateObj ()<UIViewControllerAnimatedTransitioning>
+@interface ZJSliderTransitionDelegateObj ()
 
 @end
 
 
 @implementation ZJSliderTransitionDelegateObj
-#pragma mark -UIViewControllerTransitioningDelegate
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source;
-{
-    return self;
-}
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed;
-{
-    return self;
-}
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator;
-{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    return nil;
-}
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator
-{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    return nil;
-}
+
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext;
@@ -72,22 +54,37 @@
     }
     else
     {
-        
-        [containView insertSubview:toViewController.view atIndex:0];
+
+        [containView insertSubview:toViewController.view belowSubview:fromViewController.view];
         rect = fromViewController.view.frame;
         
-        [UIView animateKeyframesWithDuration:1.5 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+        
+        
+        [UIView animateWithDuration:1.5 animations:^{
             CGRect frame = rect;
             
             frame.origin.x = - rect.size.width;
-            frame.origin.y = 0;;//- rect.size.height;
+            frame.origin.y = - 100;//0;;//- rect.size.height;
             fromViewController.view.frame = frame;
-        } completion:^(BOOL finished)
-         {
-             [fromViewController.view removeFromSuperview];
-             [transitionContext completeTransition:YES];
-         }];
+        } completion:^(BOOL finished) {
+            
+            [fromViewController.view removeFromSuperview];
+            [transitionContext completeTransition:YES];
+        }];
+        
+//        [UIView animateKeyframesWithDuration:1.5 delay:0 options:UIViewKeyframeAnimationOptionAutoreverse animations:^{
+//            CGRect frame = rect;
+//            
+//            frame.origin.x = - rect.size.width;
+//            frame.origin.y = 0;;//- rect.size.height;
+//            fromViewController.view.frame = frame;
+//        } completion:^(BOOL finished)
+//         {
+//             [fromViewController.view removeFromSuperview];
+//             [transitionContext completeTransition:YES];
+//         }];
         
     }
 }
+
 @end

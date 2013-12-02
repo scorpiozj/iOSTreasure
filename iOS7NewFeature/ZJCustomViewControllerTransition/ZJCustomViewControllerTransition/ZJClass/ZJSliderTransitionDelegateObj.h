@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZJSliderTransitionDelegateObj : NSObject<UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
+@interface ZJSliderTransitionDelegateObj : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end

@@ -23,10 +23,8 @@
     {
         self.parent = nc;
         
-        
         UIPinchGestureRecognizer *pintchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-        
-        [self.parent.view addGestureRecognizer:pintchGesture];
+        [self.parent.topViewController.view addGestureRecognizer:pintchGesture];
     }
     return self;
 }
@@ -37,6 +35,10 @@
     switch ([gr state]) {
         case UIGestureRecognizerStateBegan:
             self.interactive = YES; _startScale = scale;
+            
+            self.parent.delegate = self.parent.topViewController;
+            
+            
             [self.parent popViewControllerAnimated:YES];
             break;
         case UIGestureRecognizerStateChanged: {
@@ -56,4 +58,5 @@
             break;
     }
 }
+
 @end

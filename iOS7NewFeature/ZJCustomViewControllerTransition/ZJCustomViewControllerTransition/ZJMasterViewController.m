@@ -48,7 +48,12 @@
     self.transitionObj = transition;
 
 }
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.navigationController.delegate = nil;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -136,10 +141,10 @@
     else if (indexPath.row == 2)
     {
         ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
-        self.navigationController.delegate = self;
+//        self.navigationController.delegate = self;
+        toViewController.isPopInterActive = YES;
         [self.navigationController pushViewController:toViewController animated:YES];
         
-        self.slideTransition = [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];
     }
 }
 
@@ -158,14 +163,14 @@
     {
         return [[ZJTransitionDelegateObj alloc] init];
     }
-    else if (selectedIndexpath.row == 2)
-    {
-        if (UINavigationControllerOperationPop == operation)
-        {
-            return [[ZJSliderTransitionDelegateObj alloc] init];
-        }
-        
-    }
+//    else if (selectedIndexpath.row == 2)
+//    {
+//        if (UINavigationControllerOperationPop == operation)
+//        {
+//            return [[ZJSliderTransitionDelegateObj alloc] init];
+//        }
+//        
+//    }
     return nil;
     
 //    return self.transitionObj;
@@ -175,12 +180,11 @@
                           interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController
 {
     
-    NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
-    if (selectedIndexpath.row == 2)
-    {
-        return self.slideTransition;
-//        return [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];
-    }
+//    NSIndexPath *selectedIndexpath = [self.tableView indexPathForSelectedRow];
+//    if (selectedIndexpath.row == 2)
+//    {
+//        return self.slideTransition;
+//    }
 
     return nil;
 }
