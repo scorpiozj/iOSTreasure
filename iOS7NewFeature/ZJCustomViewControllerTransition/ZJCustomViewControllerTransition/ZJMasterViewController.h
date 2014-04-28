@@ -10,7 +10,7 @@
 
 @class ZJDetailViewController;
 
-@interface ZJMasterViewController : UITableViewController
+@interface ZJMasterViewController : UITableViewController<UINavigationControllerDelegate>
 
 @property (strong, nonatomic) ZJDetailViewController *detailViewController;
 

@@ -13,6 +13,9 @@
 #import "ZJToViewController.h"
 #import "ZJTransitionDelegateObj.h"
 
+
+
+
 @interface ZJMasterViewController () {
     NSMutableArray *_objects;
 }
@@ -129,6 +132,13 @@
         self.navigationController.delegate = self;
         [self.navigationController pushViewController:toViewController animated:YES];
     }
+    else if (2 == indexPath.row)
+    {
+        ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
+        //        toViewController.transitioningDelegate = self.transitionObj;;
+        toViewController.isInterActiveEnable = YES;
+        [self.navigationController pushViewController:toViewController animated:YES];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -141,7 +151,23 @@
 }
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
-    return [[ZJTransitionDelegateObj alloc] init];
-    return self.transitionObj;
+    NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
+    ZJTransitionDelegateObj *obj = [[ZJTransitionDelegateObj alloc] init];
+    if (1 == selected.row)
+    {
+        obj.tranStyle = TransitionStylePresent;
+        return obj;
+
+    }
+//    else if (2 == selected.row)
+//    {
+//        obj.tranStyle = TransitionStylePush;
+//        return obj;
+//    }
+    else
+    {
+        return nil;
+    }
+    
 }
 @end

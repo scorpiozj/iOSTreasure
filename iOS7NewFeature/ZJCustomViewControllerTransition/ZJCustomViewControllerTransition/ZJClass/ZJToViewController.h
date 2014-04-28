@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZJToViewController : UIViewController
-
+@property (nonatomic, assign) BOOL isInterActiveEnable;
 @end

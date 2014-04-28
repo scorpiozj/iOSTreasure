@@ -7,9 +7,10 @@
 //
 
 #import "ZJToViewController.h"
+#import "ZJSliderTransition.h"
 
-@interface ZJToViewController ()
-
+@interface ZJToViewController ()<UINavigationControllerDelegate>
+@property   (nonatomic) ZJSliderTransition *sliderTransition;
 @end
 
 @implementation ZJToViewController
@@ -20,6 +21,7 @@
     if (self) {
         // Custom initialization
         self.view.backgroundColor = [UIColor redColor];
+        _isInterActiveEnable = NO;
     }
     return self;
 }
@@ -35,6 +37,13 @@
     [btn addTarget:self action:@selector(dismissSelf:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
+    
+    _sliderTransition = [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];
+    UIPinchGestureRecognizer *pintch = [[UIPinchGestureRecognizer alloc] initWithTarget:self.sliderTransition action:@selector(handlePinch:)];
+    [self.view addGestureRecognizer:pintch];
+    
+    self.navigationController.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +60,9 @@
         
     }];
 }
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    return [[ZJSliderTransition alloc] initWithNavigationController:self.navigationController];}
 
 @end
