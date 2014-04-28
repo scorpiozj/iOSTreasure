@@ -14,6 +14,7 @@
 }
 @end
 
+
 @implementation ZJSliderTransition
 - (instancetype)initWithNavigationController:(UINavigationController *)nav
 {
@@ -28,6 +29,7 @@
     }
     return self;
 }
+
 
 - (void)handlePinch:(UIPinchGestureRecognizer *)gr
 {

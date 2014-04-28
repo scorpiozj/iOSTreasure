@@ -7,12 +7,13 @@
 //
 
 #import "ZJMasterViewController.h"
-
 #import "ZJDetailViewController.h"
 
 #import "ZJToViewController.h"
+
 #import "ZJTransitionDelegateObj.h"
 
+#import "ZJSliderTransition.h"
 
 
 
@@ -20,6 +21,7 @@
     NSMutableArray *_objects;
 }
 @property (nonatomic, strong) ZJTransitionDelegateObj *transitionObj;
+@property (nonatomic, strong) ZJSliderTransition *slideTransition;
 @end
 
 @implementation ZJMasterViewController
@@ -47,7 +49,12 @@
     self.transitionObj = transition;
 
 }
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.navigationController.delegate = nil;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -132,12 +139,14 @@
         self.navigationController.delegate = self;
         [self.navigationController pushViewController:toViewController animated:YES];
     }
+
     else if (2 == indexPath.row)
     {
         ZJToViewController *toViewController = [[ZJToViewController alloc] initWithNibName:nil bundle:nil];
         //        toViewController.transitioningDelegate = self.transitionObj;;
         toViewController.isInterActiveEnable = YES;
         [self.navigationController pushViewController:toViewController animated:YES];
+
     }
 }
 
@@ -151,6 +160,7 @@
 }
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
+
     NSIndexPath *selected = [self.tableView indexPathForSelectedRow];
     ZJTransitionDelegateObj *obj = [[ZJTransitionDelegateObj alloc] init];
     if (1 == selected.row)
